@@ -49,20 +49,12 @@ map("n", "<C-Left>", ":vertical resize +2<CR>")
 map("n", "F", ":HopWord<CR>")
 map("n", "<C-f>", ":HopLineStart<CR>")
 
--- smartquit
-map("n", "qq", function()
-   require("core.utils").close_buffer()
-end)
-
 map("n", "<C-c>", "<cmd> :%y+ <CR>") -- copy whole file content
 map("n", "<S-t>", "<cmd> :enew <CR>") -- new buffer
 map("n", "<C-t>b", "<cmd> :tabnew <CR>") -- new tabs
 map("n", "<leader>n", "<cmd> :set nu! <CR>")
 map("n", "<leader>rn", "<cmd> :set rnu! <CR>") -- relative line numbers
 map("n", "<C-s>", "<cmd> :w <CR>") -- ctrl + s to save file
-
--- get out of terminal mode
-map("t", { "jk" }, "<C-\\><C-n>")
 
 -- LSP
 map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
