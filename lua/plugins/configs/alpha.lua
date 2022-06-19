@@ -92,8 +92,8 @@ options.buttons = {
    type = "group",
    val = {
       button("n", "  New file" , ":ene <BAR> startinsert <CR>"),
-      button("f f", "  Find File  ", ":Telescope find_files<CR>"),
       button("f o", "  Recent File  ", ":Telescope oldfiles<CR>"),
+      button("f f", "  Find File  ", ":Telescope find_files<CR>"),
       button("f w", "  Find Word  ", ":Telescope live_grep<CR>"),
       button("b m", "  Bookmarks  ", ":Telescope marks<CR>"),
       button("t h", "  Themes  ", ":Telescope themes<CR>"),
