@@ -11,7 +11,7 @@ M.options = {
 M.ui = {
    changed_themes = {},
    colors = {}, -- dynamically generated, never edit this in chadrc
-   theme = "wombat", -- default theme
+   theme = "dark_custom", -- default theme
    transparency = false,
 }
 
