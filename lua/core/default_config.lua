@@ -12,7 +12,6 @@ M.ui = {
    changed_themes = {},
    colors = {}, -- dynamically generated, never edit this in chadrc
    theme = "dark_custom", -- default theme
-   -- transparency = false,
    transparency = true,
 }
 
