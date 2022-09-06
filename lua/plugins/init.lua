@@ -8,10 +8,6 @@ local plugins = {
       end,
     },
 
-    ["luisiacc/gruvbox-baby"] = {
-        config ="vim.cmd 'colorscheme gruvbox-baby'"
-    },
-
     ["nvim-treesitter/nvim-treesitter"] = {
       module = "nvim-treesitter",
       setup = function()
@@ -134,13 +130,35 @@ local plugins = {
     end,
   },
 
+  -- file managing , picker etc
+  ["kyazdani42/nvim-tree.lua"] = {
+    ft = "alpha",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    config = function()
+      require "plugins.configs.nvimtree"
+    end,
+    setup = function()
+      require("core.utils").load_mappings "nvimtree"
+    end,
+  },
+
+   ["NvChad/nvterm"] = {
+     module = "nvterm",
+     config = function()
+       require "plugins.configs.nvterm"
+     end,
+     setup = function()
+       require("core.utils").load_mappings "nvterm"
+     end,
+   },
+
    -- UI stuff
    ["lukas-reineke/indent-blankline.nvim"] = {
       event = "BufRead",
       config = function()
          require("plugins.configs.others").blankline()
       end,
-      setup = function() 
+      setup = function()
           require("core.utils").load_mappings "blankline"
       end,
    },
