@@ -1,6 +1,15 @@
 local M = {}
 local merge_tb = vim.tbl_deep_extend
 
+M.close_buffer = function(bufnr)
+  if vim.bo.buftype == "terminal" then
+    vim.cmd(vim.bo.buflisted and "set nobl | enew" or "hide")
+  else
+    bufnr = bufnr or vim.api.nvim_get_current_buf()
+    vim.cmd("confirm bd" .. bufnr)
+  end
+end
+
 M.load_mappings = function(section, mapping_opt)
   local function set_section_map(section_values)
     if section_values.plugin then
