@@ -63,11 +63,12 @@ local plugins = {
   },
 
   ["simrat39/rust-tools.nvim"] = {
-      ft = "rs",
-      config = function ()
-          require("plugins.configs.rust-tools")
-      end,
-  },
+     after = "nvim-lspconfig",
+     config = function ()
+         require("plugins.configs.rust-tools")
+         require("core.utils").load_mappings "lspconfig"
+     end,
+   },
 
   -- load luasnips + cmp related in insert mode only
 

@@ -116,11 +116,18 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
-lspconfig.rust_analyzer.setup {
-    on_attach = M.on_attach,
-    capabilities = M.capabilities,
-
-    settings = {},
-}
+-- lspconfig.rust_analyzer.setup {
+--     on_attach = M.on_attach,
+--     capabilities = M.capabilities,
+--
+--     settings = {
+--       tools = {
+--         inlay_hints = {
+--           auto = true,
+--           show_parameter_hints = true,
+--         },
+--     },
+--     }
+-- }
 
 return M
