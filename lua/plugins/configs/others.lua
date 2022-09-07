@@ -63,8 +63,30 @@ M.gitsigns = function()
         changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
     },
   }
-
   gitsigns.setup(options)
+end
+
+M.crates = function ()
+    local present, crates = pcall(require, "crates")
+
+    if not present then
+        return
+    end
+
+    local options = {
+        popup = {
+            style = "minimal",
+            order = "rounded",
+            show_version_date = false,
+            show_dependency_version = true,
+            max_height = 30,
+            max_width = 20,
+            padding = 1,
+            autofocus = true,
+        },
+    }
+
+    crates.setup(options)
 end
 
 M.blankline = function()

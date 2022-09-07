@@ -70,6 +70,13 @@ local plugins = {
      end,
    },
 
+   ["Saecki/crates.nvim"] = {
+       event = { "BufRead Cargo.toml" },
+       config = function ()
+           require("plugins.configs.others").crates()
+       end
+   },
+
   -- load luasnips + cmp related in insert mode only
 
   ["rafamadriz/friendly-snippets"] = {
