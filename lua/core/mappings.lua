@@ -23,13 +23,6 @@ M.general = {
     },
 }
 
-M.bufferline = {
-    plugin = true,
-    n = {
-        ["<S-Tab>" ] = {"<cmd> :BufferLineCycleNext <CR>"}
-    }
-}
-
 M.nvimtree = {
   plugin = true,
 
@@ -281,6 +274,18 @@ M.lspconfig = {
       "list workspace folders",
     },
   },
+}
+
+M.rust = {
+    plugin = true,
+    n = {
+    ["<leader>rr"] = { "<cmd> RustRun <CR>", "RustRun"},
+    ["<leader>rR"] = { "<cmd> RustRunnables <CR>", "RustRunnables"},
+    ["<leader>rd"] = { "<cmd> RustDebuggables <CR>", "RustDebuggables"},
+    ["<leader>rha"] = { "<cmd> RustHoverActions <CR>", "RustHoverActions"},
+    ["<leader>roc"] = { "<cmd> RustOpenCargo <CR>", "RustOpenCargo"},
+    ["<leader>rcg"] = { "<cmd> RustViewCrateGraph <CR>", "RustViewCrateGraph"},
+    },
 }
 
 M.blankline = {

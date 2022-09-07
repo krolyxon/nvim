@@ -13,6 +13,11 @@ opt.title = true
 opt.cmdheight = 1
 opt.clipboard = "unnamedplus"
 opt.cul = true -- cursor line
+opt.mouse = opt.mouse + "nv" -- mouse scrolling
+opt.ignorecase = true
+opt.smartcase = true
+opt.showmode = false
+opt.incsearch = true
 
 -- numbers
 opt.number = true

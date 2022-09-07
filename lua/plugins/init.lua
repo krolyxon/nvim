@@ -66,6 +66,7 @@ local plugins = {
      after = "nvim-lspconfig",
      config = function ()
          require("plugins.configs.rust-tools")
+         require("core.utils").load_mappings "rust"
          require("core.utils").load_mappings "lspconfig"
      end,
    },
