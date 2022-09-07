@@ -43,6 +43,53 @@ local options = {
       require("luasnip").lsp_expand(args.body)
     end,
   },
+
+  formatting = {
+        format = function(_, vim_item)
+        local icons = {
+              Namespace = "",
+              Text = " ",
+              Method = " ",
+              Function = " ",
+              Constructor = " ",
+              Field = "ﰠ ",
+              Variable = " ",
+              Class = "ﴯ ",
+              Interface = " ",
+              Module = " ",
+              Property = "ﰠ ",
+              Unit = "塞 ",
+              Value = " ",
+              Enum = " ",
+              Keyword = " ",
+              Snippet = " ",
+              Color = " ",
+              File = " ",
+              Reference = " ",
+              Folder = " ",
+              EnumMember = " ",
+              Constant = " ",
+              Struct = "פּ ",
+              Event = " ",
+              Operator = " ",
+              TypeParameter = " ",
+              Table = "",
+              Object = " ",
+              Tag = "",
+              Array = "[]",
+              Boolean = " ",
+              Number = " ",
+              Null = "ﳠ",
+              String = " ",
+              Calendar = "",
+              Watch = " ",
+              Package = "",
+            }
+        vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+        return vim_item
+    end,
+  },
+
   mapping = {
     ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<C-n>"] = cmp.mapping.select_next_item(),
