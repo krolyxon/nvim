@@ -82,7 +82,6 @@ M.crates = function ()
             max_height = 30,
             max_width = 20,
             padding = 1,
-            autofocus = true,
         },
     }
 
