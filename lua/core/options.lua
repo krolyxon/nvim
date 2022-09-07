@@ -4,8 +4,8 @@ local g = vim.g
 -- use filetype.lua instead of filetype.vim. it's enabled by default in neovim 0.8 (nightly)
 g.vim_version = vim.version().minor
 if g.vim_version < 8 then
-  g.did_load_filetypes = 0
-  g.do_filetype_lua = 1
+    g.did_load_filetypes = 0
+    g.do_filetype_lua = 1
 end
 
 opt.laststatus = 3 -- global statusline
@@ -44,26 +44,26 @@ opt.timeoutlen = 400
 
 -- disable some builtin vim plugins
 local default_plugins = {
-	"2html_plugin",
-	"getscript",
-	"getscriptPlugin",
-	"gzip",
-	"logipat",
-        "netrw",
-        "netrwPlugin",
-        "netrwSettings",
-        "netrwFileHandlers",
-	"matchit",
-	"tar",
-	"tarPlugin",
-	"rrhelper",
-	"spellfile_plugin",
-	"vimball",
-	"vimball_plugin",
-	"zip",
-	"zipPlugin",
+    "2html_plugin",
+    "getscript",
+    "getscriptPlugin",
+    "gzip",
+    "logipat",
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "matchit",
+    "tar",
+    "tarPlugin",
+    "rrhelper",
+    "spellfile_plugin",
+    "vimball",
+    "vimball_plugin",
+    "zip",
+    "zipPlugin",
 }
 
 for _, plugin in pairs(default_plugins) do
-	g["loaded_" .. plugin ] = 1
+    g["loaded_" .. plugin] = 1
 end
