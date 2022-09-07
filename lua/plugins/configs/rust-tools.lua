@@ -21,9 +21,17 @@ local options = {
     end,
   },
   server = {
-    on_attach = function(client, bufnr)
-    end,
+    on_attach =
+    require("plugins.configs.lspconfig").on_attach
   },
+
+  settings = {
+      ["rust-analyzer"] = {
+          checkOnSave = {
+              command = "check",
+          }
+      }
+  }
 }
 
 rust.setup(options)
