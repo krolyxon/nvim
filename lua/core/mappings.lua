@@ -197,13 +197,6 @@ M.lspconfig = {
             "lsp definition type",
         },
 
-        ["<leader>ra"] = {
-            function()
-                require("nvchad_ui.renamer").open()
-            end,
-            "lsp rename",
-        },
-
         ["<leader>ca"] = {
             function()
                 vim.lsp.buf.code_action()
@@ -279,10 +272,9 @@ M.lspconfig = {
 M.rust = {
     plugin = true,
     n = {
-        ["<leader>rr"] = { "<cmd> RustRun <CR>", "RustRun" },
-        ["<leader>rR"] = { "<cmd> RustRunnables <CR>", "RustRunnables" },
+        ["<leader>rr"] = { "<cmd> RustRunnables <CR>", "RustRunnables" },
         ["<leader>rd"] = { "<cmd> RustDebuggables <CR>", "RustDebuggables" },
-        ["<leader>rha"] = { "<cmd> RustHoverActions <CR>", "RustHoverActions" },
+        ["<leader>ra"] = { "<cmd> RustHoverActions <CR>", "RustHoverActions" },
         ["<leader>roc"] = { "<cmd> RustOpenCargo <CR>", "RustOpenCargo" },
         ["<leader>rcg"] = { "<cmd> RustViewCrateGraph <CR>", "RustViewCrateGraph" },
     },
