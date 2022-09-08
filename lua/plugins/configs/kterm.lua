@@ -1,4 +1,4 @@
-local present, nvterm = pcall(require, "nvterm")
+local present, kterm = pcall(require, "kterm")
 
 if not present then
     return
@@ -27,4 +27,4 @@ local options = {
     enable_new_mappings = true,
 }
 
-nvterm.setup(options)
+kterm.setup(options)

@@ -29,34 +29,31 @@ M.nvimtree = {
     n = {
         -- toggle
         ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
-
-        -- focus
-        ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
     },
 }
 
-M.nvterm = {
+M.kterm= {
     plugin = true,
 
     t = {
         -- toggle in terminal mode
-        ["<A-i>"] = {
+        ["<C-\\>"] = {
             function()
-                require("nvterm.terminal").toggle "float"
+                require("kterm.terminal").toggle "float"
             end,
             "toggle floating term",
         },
 
         ["<A-h>"] = {
             function()
-                require("nvterm.terminal").toggle "horizontal"
+                require("kterm.terminal").toggle "horizontal"
             end,
             "toggle horizontal term",
         },
 
         ["<A-v>"] = {
             function()
-                require("nvterm.terminal").toggle "vertical"
+                require("kterm.terminal").toggle "vertical"
             end,
             "toggle vertical term",
         },
@@ -64,23 +61,23 @@ M.nvterm = {
 
     n = {
         -- toggle in normal mode
-        ["<A-i>"] = {
+        ["<C-\\>"] = {
             function()
-                require("nvterm.terminal").toggle "float"
+                require("kterm.terminal").toggle "float"
             end,
             "toggle floating term",
         },
 
         ["<A-h>"] = {
             function()
-                require("nvterm.terminal").toggle "horizontal"
+                require("kterm.terminal").toggle "horizontal"
             end,
             "toggle horizontal term",
         },
 
         ["<A-v>"] = {
             function()
-                require("nvterm.terminal").toggle "vertical"
+                require("kterm.terminal").toggle "vertical"
             end,
             "toggle vertical term",
         },

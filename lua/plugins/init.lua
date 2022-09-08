@@ -141,7 +141,7 @@ local plugins = {
     -- file managing , picker etc
     ["kyazdani42/nvim-tree.lua"] = {
         ft = "alpha",
-        cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+        cmd = { "NvimTreeToggle" },
         config = function()
             require "plugins.configs.nvimtree"
         end,
@@ -150,13 +150,13 @@ local plugins = {
         end,
     },
 
-    ["NvChad/nvterm"] = {
-        module = "nvterm",
+    ["krolyxon/kterm"] = {
+        module = "kterm",
         config = function()
-            require "plugins.configs.nvterm"
+            require "plugins.configs.kterm"
         end,
         setup = function()
-            require("core.utils").load_mappings "nvterm"
+            require("core.utils").load_mappings "kterm"
         end,
     },
 
