@@ -161,6 +161,17 @@ local plugins = {
     },
 
     -- UI stuff
+
+    ["krolyxon/kdark"] = {
+        config = function()
+            local ok, kdark = pcall(require, "kdark")
+
+            if ok then
+                kdark.load_theme()
+            end
+        end,
+    },
+
     ["lukas-reineke/indent-blankline.nvim"] = {
         event = "BufRead",
         config = function()

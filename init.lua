@@ -30,5 +30,3 @@ for _, module in ipairs(modules) do
 end
 
 require("core.utils").load_mappings()
-
-vim.api.nvim_command("colorscheme gruvbox-baby")
