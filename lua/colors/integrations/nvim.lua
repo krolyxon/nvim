@@ -22,7 +22,7 @@ return {
     Comment = { fg = bright_black },
 
     SignColumn = {
-        bg = '#000000',
+        bg = black,
     },
 
     -- line number
@@ -30,7 +30,7 @@ return {
     CursorLineNr = { fg = white },
 
     CursorLine = {
-        bg = black,
+        bg = '#131313',
         sp = "none",
     },
 
