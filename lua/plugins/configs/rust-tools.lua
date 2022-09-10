@@ -12,23 +12,25 @@ local options = {
         inlay_hints = {
             auto = true,
             only_current_line = false,
-            -- whether to show parameter hints with the inlay hints or not
-            -- default: true
             show_parameter_hints = true,
+        },
+        hover_actions = {
+            auto_focus = true,
         },
         on_initialized = function()
             -- ih.set_all()
         end,
     },
     server = {
-        on_attach =
-        require("plugins.configs.lspconfig").on_attach
+        on_attach = require("plugins.configs.lspconfig").on_attach,
+        standalone = true,
     },
 
     settings = {
         ["rust-analyzer"] = {
             checkOnSave = {
-                command = "check",
+                -- command = "check",
+                command = "clippy",
             }
         }
     }
