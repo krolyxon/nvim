@@ -4,6 +4,8 @@ if not present then
     return
 end
 
+require("core.utils").load_highlight "treesitter"
+
 local options = {
     ensure_installed = {
         "lua",

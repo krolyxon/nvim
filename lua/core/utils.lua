@@ -1,6 +1,22 @@
 local M = {}
 local merge_tb = vim.tbl_deep_extend
 
+
+M.load_highlight = function(group)
+  if type(group) == "string" and group == "core" then
+      local syntax = require("colors.integrations.syntax")
+      local nvim = require("colors.integrations.nvim")
+      group = merge_tb("force", syntax, nvim)
+  end
+  if type(group) == "string" then
+    group = require("colors.integrations." .. group)
+  end
+
+  for hl, col in pairs(group) do
+    vim.api.nvim_set_hl(0, hl, col)
+  end
+end
+
 M.close_buffer = function(bufnr)
     if vim.bo.buftype == "terminal" then
         vim.cmd(vim.bo.buflisted and "set nobl | enew" or "hide")

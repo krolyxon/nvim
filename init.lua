@@ -30,3 +30,6 @@ for _, module in ipairs(modules) do
 end
 
 require("core.utils").load_mappings()
+-- require("core.utils").load_highlight "syntax"
+-- require("core.utils").load_highlight "nvim"
+require("core.utils").load_highlight "core"
