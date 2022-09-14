@@ -11,9 +11,14 @@ local options = {
         "lua",
         "rust",
     },
+
     highlight = {
         enable = true,
         use_languagetree = true,
+    },
+
+    indent = {
+        enable = true,
     },
 }
 

@@ -16,6 +16,7 @@ M.load_highlight = function(group)
 end
 
 M.core_setup = function ()
+    -- vim.cmd('hi clear')
     require("colors.term_hl")
     require("colors").load_highlight "syntax"
     require("colors").load_highlight "nvim"

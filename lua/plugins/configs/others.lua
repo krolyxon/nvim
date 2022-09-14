@@ -78,8 +78,6 @@ M.crates = function()
             order = "rounded",
             show_version_date = false,
             show_dependency_version = true,
-            max_height = 30,
-            max_width = 20,
             padding = 1,
         },
     }

@@ -124,4 +124,20 @@ return {
     NvimTreeCursorLine = {
         bg = black,
     },
+
+    -- StatusLine = {
+    --     fg = white,
+    -- },
+    -- StatusLineNC = {
+    --     fg = white,
+    -- },
+    -- StatusLineSeparator = {
+    --     fg = bright_black,
+    -- },
+    -- StatusLineTerm = {
+    --     fg = bright_black,
+    -- },
+    -- StatusLineTermNC = {
+    --     fg = bright_black,
+    -- },
 }
