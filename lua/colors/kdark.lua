@@ -18,7 +18,8 @@ M.colors= {
     bright_magenta = "#ff00ff",  -- base0D
     bright_cyan    = "#00ffff",  -- base0E
     bright_white   = "#ffffff",  -- base0F
-
+    orange         = "#be5046",
+    gray           = "#abb2bf",
 }
 
 -- M.colors= {

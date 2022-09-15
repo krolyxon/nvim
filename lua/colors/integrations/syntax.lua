@@ -17,10 +17,12 @@ local bright_blue = theme.bright_blue
 local bright_magenta = theme.bright_magenta
 local bright_cyan = theme.bright_cyan
 local bright_white = theme.bright_white
+local orange = theme.orange
+local gray = theme.gray
 
 return {
    Boolean = {
-      fg = yellow,
+      fg = orange,
    },
 
    Character = {
@@ -41,7 +43,7 @@ return {
    },
 
    Delimiter = {
-      fg = yellow,
+      fg = orange,
    },
 
    Float = {
@@ -74,7 +76,7 @@ return {
    },
 
    Operator = {
-      fg = bright_black,
+      fg = gray,
       sp = "none",
    },
 
@@ -91,7 +93,7 @@ return {
    },
 
    SpecialChar = {
-      fg = magenta,
+      fg = orange,
    },
 
    Statement = {

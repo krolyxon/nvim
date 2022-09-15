@@ -16,10 +16,12 @@ local bright_blue = theme.bright_blue          -- base0C
 local bright_magenta = theme.bright_magenta    -- base0D
 local bright_cyan = theme.bright_cyan          -- base0E
 local bright_white = theme.bright_white        -- base0F
+local orange = theme.orange
+local gray = theme.gray
 
 return {
    TSAnnotation = {
-      fg = bright_magenta,
+      fg = orange,
       sp = "none",
    },
 
@@ -84,7 +86,7 @@ return {
    },
 
    TSNone = {
-      fg = bright_black,
+      fg = gray,
       sp = "none",
    },
 
@@ -94,17 +96,17 @@ return {
    },
 
    TSParameterReference = {
-      fg = yellow,
+      fg = gray,
       sp = "none",
    },
 
    TSPunctDelimiter = {
-      fg = yellow,
+      fg = orange,
       sp = "none",
    },
 
    TSPunctSpecial = {
-      fg = white,
+      fg = gray,
       sp = "none",
    },
 
@@ -124,12 +126,12 @@ return {
    },
 
    TSTagDelimiter = {
-      fg = bright_red,
+      fg = orange,
       sp = "none",
    },
 
    TSText = {
-      fg = white,
+      fg = gray,
       sp = "none",
    },
 
