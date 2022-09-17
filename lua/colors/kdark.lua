@@ -1,7 +1,6 @@
 local M = {}
 
 M.colors= {
-    -- black          = "#131313",  -- base00
     black          = "#000000",  -- base00
     red            = "#cd0000",  -- base01
     green          = "#00cd00",  -- base02

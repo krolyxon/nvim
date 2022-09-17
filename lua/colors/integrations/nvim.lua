@@ -1,21 +1,21 @@
 local theme = require("colors.kdark").colors
 
-local black = theme.black -- base00
-local red = theme.red -- base01
-local green = theme.green -- base02
-local yellow = theme.yellow -- base03
-local blue = theme.blue -- base04
-local magenta = theme.magenta -- base05
-local cyan = theme.cyan -- base06
-local white = theme.white -- base07
-local bright_black = theme.bright_black -- base08
-local bright_red = theme.bright_red -- base09
-local bright_green = theme.bright_green -- base0A
-local bright_yellow = theme.bright_yellow -- base0B
-local bright_blue = theme.bright_blue -- base0C
-local bright_magenta = theme.bright_magenta -- base0D
-local bright_cyan = theme.bright_cyan -- base0E
-local bright_white = theme.bright_white -- base0F
+local black = theme.black
+local red = theme.red
+local green = theme.green
+local yellow = theme.yellow
+local blue = theme.blue
+local magenta = theme.magenta
+local cyan = theme.cyan
+local white = theme.white
+local bright_black = theme.bright_black
+local bright_red = theme.bright_red
+local bright_green = theme.bright_green
+local bright_yellow = theme.bright_yellow
+local bright_blue = theme.bright_blue
+local bright_magenta = theme.bright_magenta
+local bright_cyan = theme.bright_cyan
+local bright_white = theme.bright_white
 
 return {
 
