@@ -120,6 +120,19 @@ local plugins = {
     },
 
     -- misc
+
+    ['vimwiki/vimwiki'] = {
+        config = function()
+            vim.g.vimwiki_list = {
+                {
+                    path = '~/dox/vimwiki',
+                    syntax = 'markdown',
+                    ext = '.md',
+                }
+            }
+        end,
+    },
+
     ["windwp/nvim-autopairs"] = {
         after = "nvim-cmp",
         config = function()
