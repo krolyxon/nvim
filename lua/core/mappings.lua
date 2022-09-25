@@ -19,7 +19,13 @@ M.general = {
                 require("core.utils").close_buffer()
             end,
             "close buffer",
-        }
+        },
+
+        ["<leader>d"] = { "\"_d", "delete without copying into clipboard" },
+    },
+
+    v = {
+        ["<leader>d"] = { "\"_d", "delete without copying into clipboard" },
     },
 
     x = {
