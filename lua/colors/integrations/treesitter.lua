@@ -1,187 +1,168 @@
 local theme = require("colors.kdark").colors
 
-local black = theme.black                      -- base00
-local red = theme.red                          -- base01
-local green = theme.green                      -- base02
-local yellow = theme.yellow                    -- base03
-local blue = theme.blue                        -- base04
-local magenta = theme.magenta                  -- base05
-local cyan = theme.cyan                        -- base06
-local white = theme.white                      -- base07
-local bright_black = theme.bright_black        -- base08
-local bright_red = theme.bright_red            -- base09
-local bright_green = theme.bright_green        -- base0A
-local bright_yellow = theme.bright_yellow      -- base0B
-local bright_blue = theme.bright_blue          -- base0C
-local bright_magenta = theme.bright_magenta    -- base0D
-local bright_cyan = theme.bright_cyan          -- base0E
-local bright_white = theme.bright_white        -- base0F
-local orange = theme.orange
-local gray = theme.gray
-
 return {
-   TSAnnotation = {
-      fg = orange,
-      sp = "none",
-   },
+    TSAnnotation = {
+        fg = theme.orange,
+        sp = "none",
+    },
 
-   TSAttribute = {
-      fg = bright_green,
-      sp = "none",
-   },
+    TSAttribute = {
+        fg = theme.bright_green,
+        sp = "none",
+    },
 
-   TSCharacter = {
-      fg = magenta,
-      sp = "none",
-   },
+    TSCharacter = {
+        fg = theme.magenta,
+        sp = "none",
+    },
 
-   TSConstBuiltin = {
-      fg = bright_yellow,
-      sp = "none",
-   },
+    TSConstBuiltin = {
+        fg = theme.bright_yellow,
+        sp = "none",
+    },
 
-   TSConstMacro = {
-      fg = magenta,
-      sp = "none",
-   },
+    TSConstMacro = {
+        fg = theme.magenta,
+        sp = "none",
+    },
 
-   TSError = {
-      fg =  red,
-      sp = "none",
-   },
+    TSError = {
+        fg = theme.red,
+        sp = "none",
+    },
 
-   TSException = {
-      fg = magenta,
-      sp = "none",
-   },
+    TSException = {
+        fg = theme.magenta,
+        sp = "none",
+    },
 
-   TSFloat = {
-      fg = bright_yellow,
-      sp = "none",
-   },
+    TSFloat = {
+        fg = theme.bright_yellow,
+        sp = "none",
+    },
 
-   TSFuncBuiltin = {
-      fg = bright_blue,
-      sp = "none",
-   },
+    TSFuncBuiltin = {
+        fg = theme.bright_blue,
+        sp = "none",
+    },
 
-   TSFuncMacro = {
-      fg = magenta,
-      sp = "none",
-   },
+    TSFuncMacro = {
+        fg = theme.magenta,
+        sp = "none",
+    },
 
-   TSKeywordOperator = {
-      fg = bright_magenta,
-      sp = "none",
-   },
+    TSKeywordOperator = {
+        fg = theme.bright_magenta,
+        sp = "none",
+    },
 
-   TSMethod = {
-      fg = bright_blue,
-      sp = "none",
-   },
+    TSMethod = {
+        fg = theme.bright_blue,
+        sp = "none",
+    },
 
-   TSNamespace = {
-      fg = magenta,
-      sp = "none",
-   },
+    TSNamespace = {
+        fg = theme.magenta,
+        sp = "none",
+    },
 
-   TSNone = {
-      fg = gray,
-      sp = "none",
-   },
+    TSNone = {
+        fg = theme.gray,
+        sp = "none",
+    },
 
-   TSParameter = {
-      fg = magenta,
-      sp = "none",
-   },
+    TSParameter = {
+        fg = theme.magenta,
+        sp = "none",
+    },
 
-   TSParameterReference = {
-      fg = gray,
-      sp = "none",
-   },
+    TSParameterReference = {
+        fg = theme.gray,
+        sp = "none",
+    },
 
-   TSPunctDelimiter = {
-      fg = orange,
-      sp = "none",
-   },
+    TSPunctDelimiter = {
+        fg = theme.orange,
+        sp = "none",
+    },
 
-   TSPunctSpecial = {
-      fg = gray,
-      sp = "none",
-   },
+    TSPunctSpecial = {
+        fg = theme.gray,
+        sp = "none",
+    },
 
-   TSStringRegex = {
-      fg = cyan,
-      sp = "none",
-   },
+    TSStringRegex = {
+        fg = theme.cyan,
+        sp = "none",
+    },
 
-   TSStringEscape = {
-      fg = cyan,
-      sp = "none",
-   },
+    TSStringEscape = {
+        fg = theme.cyan,
+        sp = "none",
+    },
 
-   TSSymbol = {
-      fg = bright_green,
-      sp = "none",
-   },
+    TSSymbol = {
+        fg = theme.bright_green,
+        sp = "none",
+    },
 
-   TSTagDelimiter = {
-      fg = orange,
-      sp = "none",
-   },
+    TSTagDelimiter = {
+        fg = theme.orange,
+        sp = "none",
+    },
 
-   TSText = {
-      fg = gray,
-      sp = "none",
-   },
+    TSText = {
+        fg = theme.gray,
+        sp = "none",
+    },
 
-   TSStrong = {
-      bold = true,
-   },
+    TSStrong = {
+        bold = true,
+    },
 
-   TSEmphasis = {
-      fg = theme.base09,
-      sp = "none",
-   },
+    TSEmphasis = {
+        fg = theme.base09,
+        sp = "none",
+    },
 
-   TSStrike = {
-      fg = black,
-      sp = "none",
-      strikethrough = true,
-   },
+    TSStrike = {
+        fg = theme.black,
+        sp = "none",
+        strikethrough = true,
+    },
 
-   TSLiteral = {
-      fg = bright_magenta,
-      sp = "none",
-   },
+    TSLiteral = {
+        fg = theme.bright_magenta,
+        sp = "none",
+    },
 
-   TSURI = {
-      fg = bright_magenta,
-      sp = "none",
-      underline = true,
-   },
+    TSURI = {
+        fg = theme.bright_magenta,
+        sp = "none",
+        underline = true,
+    },
 
-   TSTypeBuiltin = {
-      fg = yellow,
-      sp = "none",
-   },
+    TSTypeBuiltin = {
+        fg = theme.yellow,
+        sp = "none",
+    },
 
-   TSVariableBuiltin = {
-      fg = bright_yellow,
-      sp = "none",
-   },
+    TSVariableBuiltin = {
+        fg = theme.bright_yellow,
+        sp = "none",
+    },
 
-   TSDefinition = {
-      sp = blue,
-      underline = true,
-   },
+    TSDefinition = {
+        sp = theme.blue,
+        underline = true,
+    },
 
-   TSDefinitionUsage = {
-      sp = bright_black,
-      underline = true,
-   },
+    TSDefinitionUsage = {
+        sp = theme.bright_black,
+        underline = true,
+    },
 
-   TSCurrentScope = {
-      bold = true,
-   },
+    TSCurrentScope = {
+        bold = true,
+    },
 }

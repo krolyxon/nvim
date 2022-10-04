@@ -1,132 +1,112 @@
 local theme = require("colors.kdark").colors
 
--- Standard syntax highlighting
-local black = theme.black
-local red = theme.red
-local green = theme.green
-local yellow = theme.yellow
-local blue = theme.blue
-local magenta = theme.magenta
-local cyan = theme.cyan
-local white = theme.white
-local bright_black = theme.bright_black
-local bright_red = theme.bright_red
-local bright_green = theme.bright_green
-local bright_yellow = theme.bright_yellow
-local bright_blue = theme.bright_blue
-local bright_magenta = theme.bright_magenta
-local bright_cyan = theme.bright_cyan
-local bright_white = theme.bright_white
-local orange = theme.orange
-local gray = theme.gray
-
 return {
-   Boolean = {
-      fg = orange,
-   },
+    Boolean = {
+        fg = theme.orange,
+    },
 
-   Character = {
-      fg = magenta,
-   },
+    Character = {
+        fg = theme.magenta,
+    },
 
-   Conditional = {
-      fg = magenta,
-   },
+    Conditional = {
+        fg = theme.magenta,
+    },
 
-   Constant = {
-      fg = magenta,
-   },
+    Constant = {
+        fg = theme.magenta,
+    },
 
-   Define = {
-      fg = magenta,
-      sp = "none",
-   },
+    Define = {
+        fg = theme.magenta,
+        sp = "none",
+    },
 
-   Delimiter = {
-      fg = orange,
-   },
+    Delimiter = {
+        fg = theme.orange,
+    },
 
-   Float = {
-      fg = yellow,
-   },
+    Float = {
+        fg = theme.yellow,
+    },
 
-   Function = {
-      fg = bright_blue,
-   },
+    Function = {
+        fg = theme.bright_blue,
+    },
 
-   Identifier = {
-      fg = magenta,
-      sp = "none",
-   },
+    Identifier = {
+        fg = theme.magenta,
+        sp = "none",
+    },
 
-   Include = {
-      fg = bright_blue,
-   },
+    Include = {
+        fg = theme.bright_blue,
+    },
 
-   Keyword = {
-      fg = magenta,
-   },
+    Keyword = {
+        fg = theme.magenta,
+    },
 
-   Label = {
-      fg = yellow,
-   },
+    Label = {
+        fg = theme.yellow,
+    },
 
-   Number = {
-      fg = yellow,
-   },
+    Number = {
+        fg = theme.yellow,
+    },
 
-   Operator = {
-      fg = gray,
-      sp = "none",
-   },
+    Operator = {
+        fg = theme.gray,
+        sp = "none",
+    },
 
-   PreProc = {
-      fg = yellow,
-   },
+    PreProc = {
+        fg = theme.yellow,
+    },
 
-   Repeat = {
-      fg = yellow,
-   },
+    Repeat = {
+        fg = theme.yellow,
+    },
 
-   Special = {
-      fg = bright_blue,
-   },
+    Special = {
+        fg = theme.bright_blue,
+    },
 
-   SpecialChar = {
-      fg = orange,
-   },
+    SpecialChar = {
+        fg = theme.orange,
+    },
 
-   Statement = {
-      fg = magenta,
-   },
+    Statement = {
+        fg = theme.magenta,
+    },
 
-   StorageClass = {
-      fg = yellow,
-   },
+    StorageClass = {
+        fg = theme.yellow,
+    },
 
-   String = {
-      fg = bright_green,
-   },
+    String = {
+        fg = theme.bright_green,
+    },
 
-   Structure = {
-      fg = magenta,
-   },
+    Structure = {
+        fg = theme.magenta,
+    },
 
-   Tag = {
-      fg = yellow,
-   },
+    Tag = {
+        fg = theme.yellow,
+    },
 
-   Todo = {
-      fg = yellow,
-      bg = bright_black,
-   },
+    Todo = {
+        fg = theme.yellow,
+        bg = theme.bright_black,
+    },
 
-   Type = {
-      fg = yellow,
-      sp = "none",
-   },
+    Type = {
+        fg = theme.yellow,
+        sp = "none",
+    },
 
-   Typedef = {
-      fg = yellow,
-   },
+    Typedef = {
+        fg = theme.yellow,
+    },
 }
