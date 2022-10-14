@@ -108,18 +108,18 @@ return {
     },
 
     -- StatusLine = {
-    --     fg = theme. white,
+    --     fg = theme.white,
     -- },
     -- StatusLineNC = {
-    --     fg = theme. white,
+    --     fg = theme.white,
     -- },
     -- StatusLineSeparator = {
-    --     fg = theme. bright_black,
+    --     fg = theme.bright_black,
     -- },
     -- StatusLineTerm = {
-    --     fg = theme. bright_black,
+    --     fg = theme.bright_black,
     -- },
     -- StatusLineTermNC = {
-    --     fg = theme. bright_black,
+    --     fg = theme.bright_black,
     -- },
 }
