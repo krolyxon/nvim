@@ -57,14 +57,9 @@ M.packer_cmds = {
     "PackerProfile",
     "PackerLoad",
 }
-M.treesitter_cmds = {
-    "TSInstall",
-    "TSBufEnable",
-    "TSBufDisable",
-    "TSEnable",
-    "TSDisable",
-    "TSModuleInfo",
-}
+
+M.treesitter_cmds = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" }
+M.mason_cmds = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" }
 
 M.gitsigns = function()
     autocmd({ "BufRead" }, {
