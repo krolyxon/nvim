@@ -125,7 +125,7 @@ local plugins = {
         config = function()
             vim.g.vimwiki_list = {
                 {
-                    path = '~/dox/vimwiki',
+                    path = '~/dox/notes',
                     syntax = 'markdown',
                     ext = '.md',
                 }
