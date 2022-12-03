@@ -9,7 +9,6 @@ if g.vim_version < 8 then
 end
 
 opt.laststatus = 3 -- global statusline
-opt.title = true
 opt.cmdheight = 1
 opt.clipboard = "unnamedplus"
 opt.cul = true -- cursor line

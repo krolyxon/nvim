@@ -22,6 +22,13 @@ M.general = {
         },
 
         ["<leader>d"] = { "\"_d", "delete without copying into clipboard" },
+
+        -- motion keybinds
+        ["<C-d"] = { "<C-d>zz", "move forward half page" },
+        ["<C-u"] = { "<C-u>zz", "move backward half page" },
+
+        ["n"] = { "nzzzv" },
+        ["N"] = { "Nzzzv" },
     },
 
     v = {
