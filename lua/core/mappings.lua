@@ -24,13 +24,17 @@ M.general = {
         ["<leader>d"] = { "\"_d", "delete without copying into clipboard" },
 
         -- motion keybinds
-        ["<C-d"] = { "<C-d>zz", "move forward half page" },
-        ["<C-u"] = { "<C-u>zz", "move backward half page" },
+        ["<C-d>"] = { "<C-d>zz", "move forward half page" },
+        ["<C-u>"] = { "<C-u>zz", "move backward half page" },
 
         ["n"] = { "nzzzv" },
         ["N"] = { "Nzzzv" },
 
         ["<leader>pv"] = { "<cmd> Ex <CR>", "File Tree" },
+
+        ["<leader>ex"] = { "<cmd>!chmod +x %<CR>", "Make the current buffer script executable", opts = { silent = true } },
+
+        ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]] },
     },
 
     v = {
