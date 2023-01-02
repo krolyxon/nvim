@@ -81,32 +81,6 @@ return {
     DiagnosticWarn = { fg = theme.yellow },
     DiagnosticInformation = { fg = theme.green },
 
-    -- NvimTree
-    NvimTreeEmptyFolderName = { fg = theme.bright_blue },
-    NvimTreeEndOfBuffer = { fg = theme.black },
-    NvimTreeFolderIcon = { fg = theme.bright_blue },
-    NvimTreeFolderName = { fg = theme.bright_blue },
-    NvimTreeGitDirty = { fg = theme.red },
-    NvimTreeIndentMarker = { fg = theme.bright_black },
-    NvimTreeNormal = { bg = '#000000' },
-    NvimTreeNormalNC = { bg = '#000000' },
-    NvimTreeOpenedFolderName = { fg = theme.bright_blue },
-    NvimTreeGitIgnored = { fg = theme.bright_black },
-
-    NvimTreeWinSeparator = {
-        fg = '#000000',
-        bg = '#000000',
-    },
-
-    NvimTreeWindowPicker = {
-        fg = theme.red,
-        bg = theme.black,
-    },
-
-    NvimTreeCursorLine = {
-        bg = theme.black,
-    },
-
     -- StatusLine = {
     --     fg = theme.white,
     -- },

@@ -29,6 +29,8 @@ M.general = {
 
         ["n"] = { "nzzzv" },
         ["N"] = { "Nzzzv" },
+
+        ["<leader>pv"] = { "<cmd> Ex <CR>", "File Tree" },
     },
 
     v = {
@@ -39,15 +41,6 @@ M.general = {
         -- Don't copy the replaced text after pasting in visual mode
         -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
         ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', opts = { silent = true } },
-    },
-}
-
-M.nvimtree = {
-    plugin = true,
-
-    n = {
-        -- toggle
-        ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
     },
 }
 

@@ -62,7 +62,8 @@ local plugins = {
         end,
     },
 
-    ["simrat39/rust-tools.nvim"] = {
+    -- ["simrat39/rust-tools.nvim"] = {
+    ["krolyxon/rust-tools.nvim"] = {
         after = "nvim-lspconfig",
         config = function()
             require("plugins.configs.rust-tools")
@@ -148,18 +149,6 @@ local plugins = {
         end,
         setup = function()
             require("core.utils").load_mappings "comment"
-        end,
-    },
-
-    -- file managing , picker etc
-    ["kyazdani42/nvim-tree.lua"] = {
-        ft = "alpha",
-        cmd = { "NvimTreeToggle" },
-        config = function()
-            require "plugins.configs.nvimtree"
-        end,
-        setup = function()
-            require("core.utils").load_mappings "nvimtree"
         end,
     },
 
