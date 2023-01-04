@@ -39,6 +39,9 @@ M.general = {
 
     v = {
         ["<leader>d"] = { "\"_d", "delete without copying into clipboard" },
+
+        ["J"] = { ":m '>+1<CR>gv=gv" },
+        ["K"] = { ":m '<-2<CR>gv=gv" },
     },
 
     x = {
