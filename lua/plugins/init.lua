@@ -1,5 +1,3 @@
-vim.cmd "packadd packer.nvim"
-
 local plugins = {
     ["wbthomason/packer.nvim"] = {
         cmd = require("core.lazy_load").packer_cmds,
@@ -80,20 +78,17 @@ local plugins = {
 
     -- load luasnips + cmp related in insert mode only
 
-    ["rafamadriz/friendly-snippets"] = {
-        module = { "cmp", "cmp_nvim_lsp" },
-        event = "InsertEnter",
-    },
+    ["rafamadriz/friendly-snippets"] = {},
 
     ["hrsh7th/nvim-cmp"] = {
-        after = "friendly-snippets",
+        event = "InsertEnter",
         config = function()
             require "plugins.configs.cmp"
         end,
     },
 
     ["L3MON4D3/LuaSnip"] = {
-        wants = "friendly-snippets",
+        requires = "friendly-snippets",
         after = "nvim-cmp",
         config = function()
             require("plugins.configs.others").luasnip()
