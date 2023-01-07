@@ -10,6 +10,9 @@ local options = {
     ensure_installed = {
         "lua",
         "rust",
+        "c",
+        "python",
+        "help",
     },
 
     highlight = {
