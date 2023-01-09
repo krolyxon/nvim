@@ -60,8 +60,7 @@ local plugins = {
         end,
     },
 
-    -- ["simrat39/rust-tools.nvim"] = {
-    ["krolyxon/rust-tools.nvim"] = {
+    ["simrat39/rust-tools.nvim"] = {
         after = "nvim-lspconfig",
         config = function()
             require("plugins.configs.rust-tools")
@@ -197,6 +196,9 @@ local plugins = {
             require("core.utils").load_mappings "whichkey"
         end,
     },
+
+    ["rose-pine/neovim"] = {},
+
     -- speed up deffered plugins
     ["lewis6991/impatient.nvim"] = {},
 }

@@ -130,6 +130,4 @@ local options = {
     },
 }
 
--- check for any override
-
 cmp.setup(options)
