@@ -31,6 +31,9 @@ local modules = {
     "core.packer",
 }
 
+-- add binaries installed by mason.nvim to path
+vim.env.PATH = vim.env.PATH .. ":" .. vim.fn.stdpath "data" .. "/mason/bin"
+
 for _, module in ipairs(modules) do
     local ok, err = pcall(require, module)
     if not ok then
