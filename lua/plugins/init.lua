@@ -173,6 +173,7 @@ local plugins = {
     },
 
     ["nvim-lualine/lualine.nvim"] = {
+        lazy = false,
         config = function()
             require("plugins.configs.statusline")
         end,
