@@ -20,30 +20,31 @@ M.autopairs = function()
 end
 
 M.luasnip = function()
-    local present, luasnip = pcall(require, "luasnip")
+  local present, luasnip = pcall(require, "luasnip")
 
-    if not present then
-        return
-    end
+  if not present then
+    return
+  end
 
-    local options = {
-        history = true,
-        updateevents = "TextChanged,TextChangedI",
-    }
+  local options = {
+    history = true,
+    updateevents = "TextChanged,TextChangedI",
+  }
 
-    luasnip.config.set_config(options)
-    require("luasnip.loaders.from_vscode").lazy_load()
-    require("luasnip.loaders.from_vscode").lazy_load { paths = vim.g.luasnippets_path or "" }
+  luasnip.config.set_config(options)
+  require("luasnip.loaders.from_vscode").lazy_load { paths = vim.g.luasnippets_path or "" }
+  require("luasnip.loaders.from_vscode").lazy_load()
 
-    vim.api.nvim_create_autocmd("InsertLeave", {
-        callback = function()
-            if require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()]
-                and not require("luasnip").session.jump_active
-            then
-                require("luasnip").unlink_current()
-            end
-        end,
-    })
+  vim.api.nvim_create_autocmd("InsertLeave", {
+    callback = function()
+      if
+        require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()]
+        and not require("luasnip").session.jump_active
+      then
+        require("luasnip").unlink_current()
+      end
+    end,
+  })
 end
 
 M.gitsigns = function()
@@ -99,7 +100,7 @@ M.blankline = function()
             "help",
             "terminal",
             "alpha",
-            "packer",
+            "lazy",
             "lspinfo",
             "TelescopePrompt",
             "TelescopeResults",
@@ -136,6 +137,7 @@ M.colorizer = function()
             css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
             css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
             mode = "background", -- Set the display mode.
+            tailwind = true,
         },
     }
 
