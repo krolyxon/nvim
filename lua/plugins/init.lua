@@ -64,7 +64,9 @@ local plugins = {
     },
 
     ["simrat39/rust-tools.nvim"] = {
-        after = "nvim-lspconfig",
+        -- after = "nvim-lspconfig",
+        event = "BufEnter *.rs",
+        dependencies = "neovim/nvim-lspconfig",
         config = function()
             require("plugins.configs.rust-tools")
             require("core.utils").load_mappings "rust"

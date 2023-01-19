@@ -19,6 +19,8 @@ require "plugins"
 -- add binaries installed by mason.nvim to path
 vim.env.PATH = vim.env.PATH .. ":" .. vim.fn.stdpath "data" .. "/mason/bin"
 
+
+-- Set colorscheme
 require('rose-pine').setup({
     disable_background = true
 })
