@@ -2,6 +2,10 @@ require "core.options"
 require("core.utils").load_mappings()
 -- require("colors").core_setup()
 
+-- add binaries installed by mason.nvim to path
+vim.env.PATH = vim.env.PATH .. ":" .. vim.fn.stdpath "data" .. "/mason/bin"
+
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -15,10 +19,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
-
--- add binaries installed by mason.nvim to path
-vim.env.PATH = vim.env.PATH .. ":" .. vim.fn.stdpath "data" .. "/mason/bin"
-
 
 -- Set colorscheme
 require('rose-pine').setup({
