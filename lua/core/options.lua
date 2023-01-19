@@ -42,29 +42,3 @@ opt.timeoutlen = 400
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
-
--- disable some builtin vim plugins
-local default_plugins = {
-    "2html_plugin",
-    "getscript",
-    "getscriptPlugin",
-    "gzip",
-    "logipat",
-    -- "netrw",
-    -- "netrwPlugin",
-    -- "netrwSettings",
-    -- "netrwFileHandlers",
-    "matchit",
-    "tar",
-    "tarPlugin",
-    "rrhelper",
-    "spellfile_plugin",
-    "vimball",
-    "vimball_plugin",
-    "zip",
-    "zipPlugin",
-}
-
-for _, plugin in pairs(default_plugins) do
-    g["loaded_" .. plugin] = 1
-end
