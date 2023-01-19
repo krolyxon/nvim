@@ -48,7 +48,7 @@ local plugins = {
     -- lsp stuff
 
     ["williamboman/mason.nvim"] = {
-       cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
+        cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
         config = function()
             require "plugins.configs.mason"
         end,
@@ -82,40 +82,40 @@ local plugins = {
 
     -- load luasnips + cmp related in insert mode only
 
-  ["hrsh7th/nvim-cmp"] = {
-    event = "InsertEnter",
-    dependencies = {
-      {
-        -- snippet plugin
-        "L3MON4D3/LuaSnip",
-        dependencies = "rafamadriz/friendly-snippets",
-        config = function()
-          require("plugins.configs.others").luasnip()
-        end,
-      },
+    ["hrsh7th/nvim-cmp"] = {
+        event = "InsertEnter",
+        dependencies = {
+            {
+                -- snippet plugin
+                "L3MON4D3/LuaSnip",
+                dependencies = "rafamadriz/friendly-snippets",
+                config = function()
+                    require("plugins.configs.others").luasnip()
+                end,
+            },
 
-      -- autopairing of (){}[] etc
-      {
-        "windwp/nvim-autopairs",
-        config = function()
-          require("plugins.configs.others").autopairs()
-        end,
-      },
+            -- autopairing of (){}[] etc
+            {
+                "windwp/nvim-autopairs",
+                config = function()
+                    require("plugins.configs.others").autopairs()
+                end,
+            },
 
-      -- cmp sources plugins
-      {
-        "saadparwaiz1/cmp_luasnip",
-        "hrsh7th/cmp-nvim-lua",
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
-      },
+            -- cmp sources plugins
+            {
+                "saadparwaiz1/cmp_luasnip",
+                "hrsh7th/cmp-nvim-lua",
+                "hrsh7th/cmp-nvim-lsp",
+                "hrsh7th/cmp-buffer",
+                "hrsh7th/cmp-path",
+            },
+        },
+
+        config = function()
+            require "plugins.configs.cmp"
+        end,
     },
-
-    config = function()
-      require "plugins.configs.cmp"
-    end,
-  },
     -- misc
 
     ['vimwiki/vimwiki'] = {
@@ -198,7 +198,7 @@ plugins = require("core.utils").format_plugins(plugins)
 
 -- pin commits for all default plugins
 for _, value in pairs(plugins) do
-  value.pin = true
+    value.pin = true
 end
 
 -- load lazy.nvim options
