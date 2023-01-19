@@ -119,7 +119,8 @@ local plugins = {
     -- misc
 
     ['vimwiki/vimwiki'] = {
-        config = function()
+        event = "VeryLazy",
+        init = function ()
             vim.g.vimwiki_list = {
                 {
                     path = '~/dox/notes',
