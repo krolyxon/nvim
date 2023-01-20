@@ -5,18 +5,13 @@ require("core.utils").load_mappings()
 -- add binaries installed by mason.nvim to path
 vim.env.PATH = vim.env.PATH .. ":" .. vim.fn.stdpath "data" .. "/mason/bin"
 
+-- bootstrap lazy.nvim!
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
+  require("core.bootstrap").lazy(lazypath)
 end
+
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
 
