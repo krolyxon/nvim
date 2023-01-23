@@ -1,4 +1,4 @@
-require "core.options"
+require ("core.options")
 require("core.utils").load_mappings()
 -- require("colors").core_setup()
 
