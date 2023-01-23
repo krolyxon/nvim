@@ -141,6 +141,13 @@ local plugins = {
         end,
     },
 
+    ["mbbill/undotree"] = {
+        cmd = "UndotreeToggle",
+        init = function ()
+           require("core.utils").load_mappings "undotree"
+        end,
+    },
+
     ["krolyxon/kterm"] = {
         config = function()
             require "plugins.configs.kterm"

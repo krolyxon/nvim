@@ -109,6 +109,7 @@ M.kterm = {
         },
     },
 }
+
 M.telescope = {
     plugin = true,
 
@@ -128,6 +129,14 @@ M.telescope = {
 
         -- theme switcher
         ["<leader>th"] = { "<cmd> Telescope colorscheme<CR>", "colorthemes" },
+    },
+}
+
+M.undotree = {
+    plugin = true,
+    n = {
+    -- toggle
+        ["<leader>u"] = { "<cmd> UndotreeToggle <CR>", "toggle undotree"},
     },
 }
 
