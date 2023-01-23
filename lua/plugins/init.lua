@@ -1,5 +1,27 @@
 -- All plugins have lazy = true by default, to load a plugin on startup just lazy=false
 local plugins = {
+    ["rose-pine/neovim"] = {
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- Set colorscheme
+            require('rose-pine').setup({
+                disable_background = true
+            })
+
+            function ColorMyPencils(color)
+                color = color or "rose-pine"
+                vim.cmd.colorscheme(color)
+
+                vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+                vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+            end
+
+            ColorMyPencils()
+        end
+    },
+
     ['nvim-lua/plenary.nvim'] = {},
 
     ["nvim-treesitter/nvim-treesitter"] = {
@@ -120,7 +142,7 @@ local plugins = {
 
     ['vimwiki/vimwiki'] = {
         event = "VeryLazy",
-        init = function ()
+        init = function()
             vim.g.vimwiki_list = {
                 {
                     path = '~/dox/notes',
@@ -143,8 +165,8 @@ local plugins = {
 
     ["mbbill/undotree"] = {
         cmd = "UndotreeToggle",
-        init = function ()
-           require("core.utils").load_mappings "undotree"
+        init = function()
+            require("core.utils").load_mappings "undotree"
         end,
     },
 
@@ -198,8 +220,6 @@ local plugins = {
             require("core.utils").load_mappings "whichkey"
         end,
     },
-
-    ["rose-pine/neovim"] = {},
 }
 
 plugins = require("core.utils").format_plugins(plugins)
