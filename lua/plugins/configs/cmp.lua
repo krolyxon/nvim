@@ -4,7 +4,7 @@ if not present then
     return
 end
 
-require("colors").load_highlight "cmp"
+-- require("ui").load_highlight "cmp"
 
 vim.o.completeopt = "menu,menuone,noselect"
 

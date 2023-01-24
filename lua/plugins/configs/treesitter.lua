@@ -4,7 +4,7 @@ if not present then
     return
 end
 
-require("colors").load_highlight "treesitter"
+-- require("ui").load_highlight "treesitter"
 
 local options = {
     ensure_installed = {

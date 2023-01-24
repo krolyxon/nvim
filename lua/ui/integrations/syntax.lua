@@ -1,4 +1,4 @@
-local theme = require("colors.kdark").colors
+local theme = require("ui.kdark").colors
 
 return {
     Boolean = {

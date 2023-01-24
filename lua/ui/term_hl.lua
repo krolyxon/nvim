@@ -1,4 +1,4 @@
-local colors = require("colors.kdark").colors
+local colors = require("ui.kdark").colors
 
 vim.g.terminal_color_0 = "#" .. colors.black
 vim.g.terminal_color_1 = "#" .. colors.red

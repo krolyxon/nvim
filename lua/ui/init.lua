@@ -2,12 +2,12 @@ local M = {}
 
 M.load_highlight = function(group)
   -- if type(group) == "string" and group == "core" then
-  --     local syntax = require("colors.integrations.syntax")
-  --     local nvim = require("colors.integrations.nvim")
+  --     local syntax = require("ui.integrations.syntax")
+  --     local nvim = require("ui.integrations.nvim")
   --     group = merge_tb("force", syntax, nvim)
   -- end
   if type(group) == "string" then
-    group = require("colors.integrations." .. group)
+    group = require("ui.integrations." .. group)
   end
 
   for hl, col in pairs(group) do
@@ -15,11 +15,11 @@ M.load_highlight = function(group)
   end
 end
 
-M.core_setup = function ()
+M.setup_colorscheme = function ()
     -- vim.cmd('hi clear')
-    require("colors.term_hl")
-    require("colors").load_highlight "syntax"
-    require("colors").load_highlight "nvim"
+    require("ui.term_hl")
+    require("ui").load_highlight "syntax"
+    require("ui").load_highlight "nvim"
 end
 
 return M
