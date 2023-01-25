@@ -1,8 +1,4 @@
-local present, lspconfig = pcall(require, "lspconfig")
-
-if not present then
-    return
-end
+local lspconfig = require("lspconfig")
 
 local M = {}
 local utils = require "core.utils"

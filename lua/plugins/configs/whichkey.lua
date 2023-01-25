@@ -1,9 +1,3 @@
-local present, wk = pcall(require, "which-key")
-
-if not present then
-    return
-end
-
 local options = {
 
     icons = {
@@ -34,4 +28,4 @@ local options = {
     },
 }
 
-wk.setup(options)
+require("which-key").setup(options)

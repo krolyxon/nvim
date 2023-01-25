@@ -1,9 +1,3 @@
-local present, treesitter = pcall(require, "nvim-treesitter.configs")
-
-if not present then
-    return
-end
-
 -- require("ui").load_highlight "treesitter"
 
 local options = {
@@ -25,4 +19,4 @@ local options = {
     },
 }
 
-treesitter.setup(options)
+require("nvim-treesitter.configs").setup(options)

@@ -1,9 +1,3 @@
-local present, mason = pcall(require, "mason")
-
-if not present then
-    return
-end
-
 local options = {
     ensure_installed = { "lua-language-server", "rust_analyzer" }, -- not an option from mason.nvim
 
@@ -31,4 +25,4 @@ local options = {
     max_concurrent_installers = 10,
 }
 
-mason.setup(options)
+require("mason").setup(options)

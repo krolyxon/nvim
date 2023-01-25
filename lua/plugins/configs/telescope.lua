@@ -1,9 +1,3 @@
-local present, telescope = pcall(require, "telescope")
-
-if not present then
-    return
-end
-
 vim.g.theme_switcher_loaded = true
 
 local options = {
@@ -56,16 +50,8 @@ local options = {
             n = { ["q"] = require("telescope.actions").close },
         },
     },
-
-    extensions_list = { "themes", "terms" },
 }
 
+local telescope = require("telescope")
 -- check for any override
 telescope.setup(options)
-
--- load extensions
-pcall(function()
-    for _, ext in ipairs(options.extensions_list) do
-        telescope.load_extension(ext)
-    end
-end)
