@@ -99,7 +99,12 @@ local plugins = {
         event = { "BufRead Cargo.toml" },
         config = function()
             require("plugins.configs.others").crates()
-        end
+        end,
+        -- Add crates.nvim to the cmp sources as soon as we load the plugin
+        init = function()
+            local cmp = require("cmp");
+            cmp.setup.buffer({ sources = { { name = "crates" } } })
+        end,
     },
 
     -- load luasnips + cmp related in insert mode only
