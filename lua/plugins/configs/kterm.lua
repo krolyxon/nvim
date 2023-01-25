@@ -1,9 +1,3 @@
-local present, kterm = pcall(require, "kterm")
-
-if not present then
-    return
-end
-
 local options = {
     terminals = {
         list = {},
@@ -27,4 +21,4 @@ local options = {
     enable_new_mappings = true,
 }
 
-kterm.setup(options)
+require("kterm").setup(options)
