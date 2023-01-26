@@ -195,7 +195,6 @@ local plugins = {
     },
 
     ["nvchad/nvim-colorizer.lua"] = {
-        opt = true,
         init = function()
             require("core.utils").lazy_load "nvim-colorizer.lua"
         end,
