@@ -14,7 +14,7 @@ return {
     },
 
     Constant = {
-        fg = theme.magenta,
+        fg = theme.white,
     },
 
     Define = {
@@ -23,7 +23,7 @@ return {
     },
 
     Delimiter = {
-        fg = theme.orange,
+        fg = theme.cyan,
     },
 
     Float = {
@@ -35,7 +35,7 @@ return {
     },
 
     Identifier = {
-        fg = theme.magenta,
+        fg = theme.white,
         sp = "none",
     },
 
@@ -85,11 +85,11 @@ return {
     },
 
     String = {
-        fg = theme.bright_green,
+        fg = theme.yellow,
     },
 
     Structure = {
-        fg = theme.magenta,
+        fg = '#37908d',
     },
 
     Tag = {

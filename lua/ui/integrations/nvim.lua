@@ -26,7 +26,7 @@ return {
     -- Pmenu i.e completion menu
     Pmenu = { bg = theme.black },
     PmenuSbar = { bg = theme.black },
-    PmenuSel = { bg = theme.black, fg = theme.white },
+    PmenuSel = { bg = '#26233a', fg = theme.white },
     PmenuThumb = { bg = theme.bright_black },
 
     -- nvim cmp
