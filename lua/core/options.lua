@@ -1,13 +1,6 @@
 local opt = vim.opt
 local g = vim.g
 
--- use filetype.lua instead of filetype.vim. it's enabled by default in neovim 0.8 (nightly)
-g.vim_version = vim.version().minor
-if g.vim_version < 8 then
-    g.did_load_filetypes = 0
-    g.do_filetype_lua = 1
-end
-
 opt.laststatus = 3 -- global statusline
 opt.cmdheight = 1
 opt.clipboard = "unnamedplus"
