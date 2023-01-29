@@ -1,6 +1,25 @@
+local KrolyxonGroup = vim.api.nvim_create_augroup('Krolyxon', {})
+
+local autocmd = vim.api.nvim_create_autocmd
+
 -- Highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = 'IncSearch',
+            timeout = 40,
+        })
+    end,
 })
+
+-- Remove trailing whitespaces on :w
+autocmd({ "BufWritePre" }, {
+    group = KrolyxonGroup,
+    pattern = "*",
+    command = [[%s/\s\+$//e]],
+})
+
+-- netrw settings
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
