@@ -135,8 +135,8 @@ M.telescope = {
 M.undotree = {
     plugin = true,
     n = {
-    -- toggle
-        ["<leader>u"] = { "<cmd> UndotreeToggle <CR>", "toggle undotree"},
+        -- toggle
+        ["<leader>u"] = { "<cmd> UndotreeToggle <CR>", "toggle undotree" },
     },
 }
 
