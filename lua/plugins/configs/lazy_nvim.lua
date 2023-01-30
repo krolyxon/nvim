@@ -1,7 +1,5 @@
 return {
-    defaults = {
-        lazy = true,
-    },
+    defaults = { lazy = true },
 
     -- install = {
     -- try to load one of these colorschemes when starting an installation during startup
