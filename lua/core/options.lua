@@ -32,7 +32,15 @@ opt.shortmess:append "sI"
 opt.signcolumn = "yes"
 opt.termguicolors = true
 opt.timeoutlen = 400
+
+opt.swapfile = false
+opt.undodir = vim.fn.expand('~/.local/share/nvim/undodir')
 opt.undofile = true
+
+-- netrw settings
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
