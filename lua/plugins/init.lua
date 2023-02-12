@@ -1,14 +1,10 @@
 -- All plugins have lazy = true by default, to load a plugin on startup just lazy=false
 local plugins = {
-    ["rose-pine/neovim"] = {
+    ["~/repos/krose-pine"] = {
+        dir = "~/repos/krose-pine",
         lazy = false,
         priority = 1000,
         config = function()
-            -- Set colorscheme
-            require('rose-pine').setup({
-                disable_background = true
-            })
-
             function ColorMyPencils(color)
                 color = color or "rose-pine"
                 vim.cmd.colorscheme(color)
@@ -204,7 +200,7 @@ local plugins = {
     },
 
     ["nvim-lualine/lualine.nvim"] = {
-        lazy = false,
+        event = "VeryLazy",
         config = function()
             require("plugins.configs.statusline")
         end,
