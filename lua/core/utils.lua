@@ -1,15 +1,6 @@
 local M = {}
 local merge_tb = vim.tbl_deep_extend
 
-M.format_plugins = function(plugins) local final_table = {}
-    for key, _ in pairs(plugins) do
-        plugins[key][1] = key
-        final_table[#final_table + 1] = plugins[key]
-    end
-
-    return final_table
-end
-
 M.close_buffer = function(bufnr)
     if vim.bo.buftype == "terminal" then
         vim.cmd(vim.bo.buflisted and "set nobl | enew" or "hide")
