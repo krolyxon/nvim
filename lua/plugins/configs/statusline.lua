@@ -20,6 +20,23 @@ local function LSP_progress()
   return ("%#St_LspProgress#" .. content) or ""
 end
 
+  -- Lsp server name .
+local function lsp_server()
+    local msg = 'lsp'
+    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local clients = vim.lsp.get_active_clients()
+    if next(clients) == nil then
+      return msg
+    end
+    for _, client in ipairs(clients) do
+      local filetypes = client.config.filetypes
+      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+        return client.name
+      end
+    end
+    return msg
+  end
+
 require('lualine').setup {
     options = {
         icons_enabled = true,
@@ -43,6 +60,7 @@ require('lualine').setup {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {
+            { lsp_server,   icon = ' ', color = { fg = '#ffffff', gui = 'bold' } },
             { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } }
         },
         lualine_x = { LSP_progress, 'encoding', 'fileformat', 'filetype' },
