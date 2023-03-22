@@ -10,6 +10,10 @@ M.general = {
         ["<C-j>"] = { "<C-w>j", "window down" },
         ["<C-k>"] = { "<C-w>k", "window up" },
 
+        -- cycleling through buffers
+        ["tk"] = { "<cmd> bnext <CR>", "Next buffer" },
+        ["tj"] = { "<cmd> bprev <CR>", "Previous buffer" },
+
         -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
         -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
         -- empty mode is same as using <cmd> :map
@@ -332,6 +336,16 @@ M.blankline = {
             "Jump to current_context",
         },
     },
+}
+
+M.vimwiki = {
+    plugin = true,
+    n = {
+        ["<leader>wd"] = {
+
+         "<cmd> VimwikiDiaryIndex <CR>", "VimWiki Diary" ,
+        }
+    }
 }
 
 return M

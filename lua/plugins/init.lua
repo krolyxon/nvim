@@ -147,6 +147,7 @@ local plugins = {
                     ext = '.md',
                 }
             }
+            require("core.utils").load_mappings "vimwiki"
         end,
     },
 
