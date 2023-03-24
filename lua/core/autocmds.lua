@@ -18,3 +18,22 @@ autocmd({ "BufWritePre" }, {
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
+
+-- Don"t auto commenting new lines
+autocmd("BufEnter", {
+    pattern = "",
+    command = "set fo-=c fo-=r fo-=o"
+})
+
+-- spell check markdown and tex files
+vim.cmd([[
+  augroup spellCheck
+    autocmd!
+    autocmd Filetype plaintext setlocal spell
+    autocmd FileType markdown setlocal spell
+    autocmd BufRead,BufNewFile *.md setlocal spell
+    autocmd BufRead,BufNewFile *.rmd setlocal spell
+    autocmd BufRead,BufNewFile *.Rmd setlocal spell
+    autocmd BufRead,BufNewFile *.tex setlocal spell
+  augroup END
+]])
