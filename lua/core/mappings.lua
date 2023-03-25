@@ -338,14 +338,4 @@ M.blankline = {
     },
 }
 
-M.vimwiki = {
-    plugin = true,
-    n = {
-        ["<leader>wd"] = {
-
-         "<cmd> VimwikiDiaryIndex <CR>", "VimWiki Diary" ,
-        }
-    }
-}
-
 return M
