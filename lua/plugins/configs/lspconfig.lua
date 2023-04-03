@@ -136,12 +136,16 @@ lspconfig.clangd.setup {
     -- init_option = { fallbackFlags = {  "-std=c++2a"  } }
 }
 
+lspconfig.html.setup {
+    on_attach = M.on_attach,
+    capabilities = M.capabilities,
+    init_option = { provideFormatter = true }
+}
+
 local servers = {
     "marksman",
     "taplo",
-    -- "pylsp",
     "pyright",
-    "html",
 }
 
 for _, lsp in ipairs(servers) do
