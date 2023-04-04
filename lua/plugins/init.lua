@@ -41,7 +41,7 @@ local plugins = {
                     if vim.v.shell_error == 0 then
                         vim.api.nvim_del_augroup_by_name "GitSignsLazyLoad"
                         vim.schedule(function()
-                            require("lazy").load { plugins = "gitsigns.nvim" }
+                            require("lazy").load { plugins = { "gitsigns.nvim" } }
                         end)
                     end
                 end,
@@ -82,7 +82,9 @@ local plugins = {
 
     { "simrat39/rust-tools.nvim",
         -- after = "nvim-lspconfig",
-        event = "BufEnter *.rs",
+        -- event = "BufEnter *.rs",
+        ft = { "rust" },
+        event = { "InsertEnter", "BufReadPre", "BufAdd", "BufNew" },
         dependencies = "neovim/nvim-lspconfig",
         config = function()
             require("plugins.configs.rust-tools")
