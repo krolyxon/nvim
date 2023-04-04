@@ -136,6 +136,13 @@ M.telescope = {
     },
 }
 
+M.fugitive = {
+    plugin = true,
+    n = {
+        ["<leader>gs"] = { "<cmd> Git <CR>", "Git" }
+    }
+}
+
 M.undotree = {
     plugin = true,
     n = {

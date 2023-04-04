@@ -52,6 +52,13 @@ local plugins = {
         end,
     },
 
+    { "tpope/vim-fugitive",
+        cmd = "Git",
+        init = function ()
+            require("core.utils").load_mappings "fugitive"
+        end
+    },
+
     { "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
         config = function()
