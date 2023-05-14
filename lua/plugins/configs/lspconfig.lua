@@ -24,9 +24,9 @@ M.on_attach = function(client, bufnr)
             vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
         end
 
-        lspSymbol("Error", "")
-        lspSymbol("Info", "")
-        lspSymbol("Hint", "")
+        lspSymbol("Error", "󰅙")
+        lspSymbol("Info", "󰋼")
+        lspSymbol("Hint", "󰌵")
         lspSymbol("Warn", "")
 
         vim.diagnostic.config {
