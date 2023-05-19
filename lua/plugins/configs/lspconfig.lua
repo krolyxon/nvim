@@ -139,13 +139,15 @@ lspconfig.clangd.setup {
 lspconfig.html.setup {
     on_attach = M.on_attach,
     capabilities = M.capabilities,
-    init_option = { provideFormatter = true }
+    init_option = { provideFormatter = true },
+    filetypes = { "htmldjango", "html"},
 }
 
 local servers = {
     "marksman",
     "taplo",
     "pyright",
+    "cssls",
 }
 
 for _, lsp in ipairs(servers) do

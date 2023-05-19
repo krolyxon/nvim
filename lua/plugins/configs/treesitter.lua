@@ -6,7 +6,6 @@ local options = {
         "rust",
         "c",
         "python",
-        "help",
     },
 
     highlight = {
