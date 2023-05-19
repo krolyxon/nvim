@@ -144,6 +144,21 @@ M.fugitive = {
     }
 }
 
+M.harpoon = {
+    plugin = true,
+    n = {
+        ["<C-h>"] = { function() require("harpoon.ui").nav_file(1) end, "Harpoon File 1" },
+        ["<C-j>"] = { function() require("harpoon.ui").nav_file(2) end, "Harpoon File 2" },
+        ["<C-k>"] = { function() require("harpoon.ui").nav_file(3) end, "Harpoon File 3" },
+        ["<C-l>"] = { function() require("harpoon.ui").nav_file(4) end, "Harpoon File 4" },
+
+        ["<C-e>"] = { function() require("harpoon.ui").toggle_quick_menu() end, "Harpoon Toggle Quick Menu" },
+
+        ["<leader>a"] = { function() require("harpoon.mark").add_file() end, "Harpoon Add File" },
+
+    }
+}
+
 M.undotree = {
     plugin = true,
     n = {
@@ -264,14 +279,14 @@ M.lspconfig = {
 
         ["[d"] = {
             function()
-                vim.diagnostic.goto_prev()
+                vim.diagnostic.goto_prev({ float = { border = "rounded" } })
             end,
             "goto prev",
         },
 
         ["]d"] = {
             function()
-                vim.diagnostic.goto_next()
+                vim.diagnostic.goto_next({ float = { border = "rounded" } })
             end,
             "goto_next",
         },

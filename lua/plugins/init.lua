@@ -69,6 +69,12 @@ local plugins = {
         end,
     },
 
+    { "ThePrimeagen/harpoon",
+        init = function ()
+            require("core.utils").load_mappings "harpoon"
+        end
+    },
+
     -- lsp stuff
 
     { "williamboman/mason.nvim",
