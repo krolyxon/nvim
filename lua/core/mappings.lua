@@ -5,10 +5,10 @@ M.general = {
         ["<ESC>"] = { "<cmd> noh <CR>", "no highlight" },
 
         -- switch between windows
-        ["<C-h>"] = { "<C-w>h", "window left" },
-        ["<C-l>"] = { "<C-w>l", "window right" },
-        ["<C-j>"] = { "<C-w>j", "window down" },
-        ["<C-k>"] = { "<C-w>k", "window up" },
+        -- ["<C-h>"] = { "<C-w>h", "window left" },
+        -- ["<C-l>"] = { "<C-w>l", "window right" },
+        -- ["<C-j>"] = { "<C-w>j", "window down" },
+        -- ["<C-k>"] = { "<C-w>k", "window up" },
 
         -- cycleling through buffers
         ["tk"] = { "<cmd> bnext <CR>", "Next buffer" },
@@ -74,19 +74,19 @@ M.kterm = {
             "toggle floating term",
         },
 
-        ["<A-h>"] = {
-            function()
-                require("kterm.terminal").toggle "horizontal"
-            end,
-            "toggle horizontal term",
-        },
-
-        ["<A-v>"] = {
-            function()
-                require("kterm.terminal").toggle "vertical"
-            end,
-            "toggle vertical term",
-        },
+        -- ["<A-h>"] = {
+        --     function()
+        --         require("kterm.terminal").toggle "horizontal"
+        --     end,
+        --     "toggle horizontal term",
+        -- },
+        --
+        -- ["<A-v>"] = {
+        --     function()
+        --         require("kterm.terminal").toggle "vertical"
+        --     end,
+        --     "toggle vertical term",
+        -- },
     },
 
     n = {
@@ -98,19 +98,19 @@ M.kterm = {
             "toggle floating term",
         },
 
-        ["<A-h>"] = {
-            function()
-                require("kterm.terminal").toggle "horizontal"
-            end,
-            "toggle horizontal term",
-        },
-
-        ["<A-v>"] = {
-            function()
-                require("kterm.terminal").toggle "vertical"
-            end,
-            "toggle vertical term",
-        },
+        -- ["<A-h>"] = {
+        --     function()
+        --         require("kterm.terminal").toggle "horizontal"
+        --     end,
+        --     "toggle horizontal term",
+        -- },
+        --
+        -- ["<A-v>"] = {
+        --     function()
+        --         require("kterm.terminal").toggle "vertical"
+        --     end,
+        --     "toggle vertical term",
+        -- },
     },
 }
 
