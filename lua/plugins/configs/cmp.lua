@@ -1,7 +1,6 @@
 local cmp = require("cmp")
 -- require("ui").load_highlight "cmp"
 
-vim.o.completeopt = "menu,menuone,noselect"
 
 local function border(hl_name)
     return {
@@ -17,6 +16,9 @@ local function border(hl_name)
 end
 
 local options = {
+    completion = {
+        completeopt = "menu,menuone",
+    },
     window = {
         completion = {
             border = border "CmpBorder",
