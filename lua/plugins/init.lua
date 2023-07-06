@@ -30,7 +30,8 @@ local plugins = {
         end,
     },
 
-    { "lewis6991/gitsigns.nvim",
+    {
+        "lewis6991/gitsigns.nvim",
         ft = "gitcommit",
         init = function()
             -- load gitsigns only when a git file is opened
@@ -52,14 +53,16 @@ local plugins = {
         end,
     },
 
-    { "tpope/vim-fugitive",
+    {
+        "tpope/vim-fugitive",
         cmd = "Git",
-        init = function ()
+        init = function()
             require("core.utils").load_mappings "fugitive"
         end
     },
 
-    { "nvim-telescope/telescope.nvim",
+    {
+        "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
         config = function()
             require "plugins.configs.telescope"
@@ -69,22 +72,25 @@ local plugins = {
         end,
     },
 
-    { "ThePrimeagen/harpoon",
-        init = function ()
+    {
+        "ThePrimeagen/harpoon",
+        init = function()
             require("core.utils").load_mappings "harpoon"
         end
     },
 
     -- lsp stuff
 
-    { "williamboman/mason.nvim",
+    {
+        "williamboman/mason.nvim",
         cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
         config = function()
             require "plugins.configs.mason"
         end,
     },
 
-    { "neovim/nvim-lspconfig",
+    {
+        "neovim/nvim-lspconfig",
         init = function()
             require("core.utils").lazy_load "nvim-lspconfig"
         end,
@@ -93,7 +99,8 @@ local plugins = {
         end,
     },
 
-    { "simrat39/rust-tools.nvim",
+    {
+        "simrat39/rust-tools.nvim",
         -- after = "nvim-lspconfig",
         -- event = "BufEnter *.rs",
         ft = { "rust" },
@@ -105,7 +112,8 @@ local plugins = {
         end,
     },
 
-    { "Saecki/crates.nvim",
+    {
+        "Saecki/crates.nvim",
         event = { "BufRead Cargo.toml" },
         config = function()
             require("crates").setup()
@@ -114,9 +122,20 @@ local plugins = {
         end,
     },
 
+
+    {
+        "p00f/clangd_extensions.nvim",
+        ft = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+        dependencies = "neovim/nvim-lspconfig",
+        config = function()
+           require("plugins.configs.clangd")
+        end
+    },
+
     -- load luasnips + cmp related in insert mode only
 
-    { "hrsh7th/nvim-cmp",
+    {
+        "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         dependencies = {
             {
@@ -152,7 +171,8 @@ local plugins = {
     },
     -- misc
 
-    { 'vimwiki/vimwiki',
+    {
+        'vimwiki/vimwiki',
         event = "VeryLazy",
         init = function()
             vim.g.vimwiki_list = {
@@ -165,7 +185,8 @@ local plugins = {
         end,
     },
 
-    { "numToStr/Comment.nvim",
+    {
+        "numToStr/Comment.nvim",
         -- keys = { "gc", "gb" },
         config = function()
             require("Comment").setup()
@@ -175,14 +196,16 @@ local plugins = {
         end,
     },
 
-    { "mbbill/undotree",
+    {
+        "mbbill/undotree",
         cmd = "UndotreeToggle",
         init = function()
             require("core.utils").load_mappings "undotree"
         end,
     },
 
-    { "krolyxon/kterm",
+    {
+        "krolyxon/kterm",
         config = function()
             require "plugins.configs.kterm"
         end,
@@ -193,7 +216,8 @@ local plugins = {
 
     -- UI stuff
 
-    { "lukas-reineke/indent-blankline.nvim",
+    {
+        "lukas-reineke/indent-blankline.nvim",
         event = "BufRead",
         config = function()
             require("plugins.configs.others").blankline()
@@ -204,7 +228,8 @@ local plugins = {
         end,
     },
 
-    { "nvchad/nvim-colorizer.lua",
+    {
+        "nvchad/nvim-colorizer.lua",
         init = function()
             require("core.utils").lazy_load "nvim-colorizer.lua"
         end,
@@ -213,7 +238,8 @@ local plugins = {
         end,
     },
 
-    { "nvim-lualine/lualine.nvim",
+    {
+        "nvim-lualine/lualine.nvim",
         event = "VeryLazy",
         config = function()
             require("plugins.configs.statusline")
@@ -221,7 +247,8 @@ local plugins = {
     },
 
     -- Only load whichkey after all the gui
-    { "folke/which-key.nvim",
+    {
+        "folke/which-key.nvim",
         enabled = true,
         keys = { "<leader>", "\"", "'", "`", "c", "v" },
         config = function()

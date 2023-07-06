@@ -127,20 +127,20 @@ lspconfig.lua_ls.setup {
 --     }
 -- }
 
-lspconfig.clangd.setup {
-    filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-    single_file_support = true,
-    on_attach = M.on_attach,
-    capabilities = M.capabilities,
-    root_dir = vim.loop.cwd,
-    -- init_option = { fallbackFlags = {  "-std=c++2a"  } }
-}
+-- lspconfig.clangd.setup {
+--     filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+--     single_file_support = true,
+--     on_attach = M.on_attach,
+--     capabilities = M.capabilities,
+--     root_dir = vim.loop.cwd,
+--     -- init_option = { fallbackFlags = {  "-std=c++2a"  } }
+-- }
 
 lspconfig.html.setup {
     on_attach = M.on_attach,
     capabilities = M.capabilities,
     init_option = { provideFormatter = true },
-    filetypes = { "htmldjango", "html"},
+    filetypes = { "htmldjango", "html" },
 }
 
 local servers = {
