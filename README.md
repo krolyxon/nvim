@@ -1,1 +1,11 @@
-This is my neovim config, most of the stuff is taken from [NvChad](https://github.com/nvchad/nvchad) and modified it for my personal needs.
+## Installation
+```bash
+# backup your current config
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+
+# clone my configuration
+git clone https://github.com/krolyoxn/nvim.git ~/.config/nvim
+```
+
+### Thanks to [NvChad](https://github.com/nvchad/nvchad)
