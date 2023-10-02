@@ -1,25 +1,36 @@
 -- All plugins have lazy = true by default, to load a plugin on startup just lazy=false
 local plugins = {
-    { dir = "~/repos/krose-pine",
+    -- { dir = "~/repos/krose-pine",
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         function ColorMyPencils(color)
+    --             color = color or "rose-pine"
+    --             vim.cmd.colorscheme(color)
+    --
+    --             vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    --             vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    --
+    --         end
+    --
+    --         ColorMyPencils()
+    --     end
+    -- },
+    {
+        "folke/tokyonight.nvim",
         lazy = false,
-        priority = 1000,
-        config = function()
-            function ColorMyPencils(color)
-                color = color or "rose-pine"
-                vim.cmd.colorscheme(color)
-
-                vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-                vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
-            end
-
-            ColorMyPencils()
+        init = function()
+            require("tokyonight").setup({
+                transparent = true,
+            })
+            vim.cmd.colorscheme("tokyonight-night")
         end
     },
 
     { 'nvim-lua/plenary.nvim' },
 
-    { "nvim-treesitter/nvim-treesitter",
+    {
+        "nvim-treesitter/nvim-treesitter",
         init = function()
             require("core.utils").lazy_load "nvim-treesitter"
         end,
@@ -177,7 +188,7 @@ local plugins = {
         init = function()
             vim.g.vimwiki_list = {
                 {
-                    path = '~/dox/notes',
+                    path = '~/dox/brain/Notes',
                     syntax = 'markdown',
                     ext = '.md',
                 }
