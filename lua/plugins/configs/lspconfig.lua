@@ -143,6 +143,15 @@ lspconfig.html.setup {
     filetypes = { "htmldjango", "html" },
 }
 
+lspconfig.asm_lsp.setup {
+    on_attach = M.on_attach,
+    capabilities = M.capabilities,
+    init_option = { provideFormatter = true },
+    command = "asm-lsp",
+    filetypes = { "s", "S", "asm" },
+
+}
+
 local servers = {
     "marksman",
     "taplo",

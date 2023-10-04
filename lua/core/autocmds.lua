@@ -37,3 +37,9 @@ vim.cmd([[
     autocmd BufRead,BufNewFile *.tex setlocal spell
   augroup END
 ]])
+
+
+-- Run C/C++ fil
+vim.api.nvim_buf_set_keymap(0, 'n', '<F5>', ':w<CR>:!gcc -o %:t:r % && ./%:t:r<CR>', {silent = true})
+vim.api.nvim_buf_set_keymap(0, 'n', '<F6>', ':w<CR>:!g++ -o %:t:r % && ./%:t:r<CR>', {silent = true})
+-- vim.api.nvim_buf_set_keymap(0, 'n', '<F5>', ":w<CR>:new | term . '!gcc %:p:h && ./a.out'<CR>:startinsert<CR>", {silent = true})
