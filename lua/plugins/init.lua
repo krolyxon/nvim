@@ -139,7 +139,7 @@ local plugins = {
         ft = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
         dependencies = "neovim/nvim-lspconfig",
         config = function()
-           require("plugins.configs.clangd")
+            require("plugins.configs.clangd")
         end
     },
 
@@ -268,6 +268,21 @@ local plugins = {
         end,
         init = function()
             require("core.utils").load_mappings "whichkey"
+        end,
+    },
+
+
+    {
+        "nvim-tree/nvim-tree.lua",
+        cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+        init = function()
+            require("core.utils").load_mappings "nvimtree"
+        end,
+        opts = function()
+            return require "plugins.configs.nvimtree"
+        end,
+        config = function(_, opts)
+            require("nvim-tree").setup(opts)
         end,
     },
 }
