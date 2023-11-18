@@ -148,7 +148,7 @@ lspconfig.asm_lsp.setup {
     capabilities = M.capabilities,
     init_option = { provideFormatter = true },
     command = "asm-lsp",
-    filetypes = { "s", "S", "asm" },
+    filetypes = { "a", "s", "S", "asm" },
 
 }
 
