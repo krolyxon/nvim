@@ -1,8 +1,5 @@
 local options = {
-    ensure_installed = { "lua-language-server", "rust_analyzer" }, -- not an option from mason.nvim
-
     PATH = "skip",
-
     ui = {
         icons = {
             package_pending = " ",

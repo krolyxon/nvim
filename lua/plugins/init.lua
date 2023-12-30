@@ -97,6 +97,10 @@ local plugins = {
         cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
         config = function()
             require "plugins.configs.mason"
+            local ensure_installed = { "lua-language-server", "rust-analyzer", "pyright", "clangd", "html-lsp" } -- not an option from mason.nvim
+            vim.api.nvim_create_user_command("MasonInstallAll", function()
+                vim.cmd("MasonInstall " .. table.concat(ensure_installed, " "))
+            end, {})
         end,
     },
 
