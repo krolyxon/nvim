@@ -42,4 +42,5 @@ vim.cmd([[
 -- Run C/C++ fil
 vim.api.nvim_buf_set_keymap(0, 'n', '<F5>', ':w<CR>:!gcc -o %:t:r % && ./%:t:r<CR>', {silent = true})
 vim.api.nvim_buf_set_keymap(0, 'n', '<F6>', ':w<CR>:!g++ -o %:t:r % && ./%:t:r<CR>', {silent = true})
+vim.api.nvim_buf_set_keymap(0, 'n', '<F7>', ':w<CR>:lua require("kterm.terminal").send("cp -f " .. vim.fn.expand("%") .. " /tmp; javac -d /tmp " .. vim.fn.expand("%") .. "; java -cp /tmp " .. vim.fn.expand("%:t:r"), "float")<CR>', {silent = true})
 -- vim.api.nvim_buf_set_keymap(0, 'n', '<F5>', ":w<CR>:new | term . '!gcc %:p:h && ./a.out'<CR>:startinsert<CR>", {silent = true})
