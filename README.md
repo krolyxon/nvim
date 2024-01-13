@@ -5,7 +5,7 @@ mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 
 # clone my configuration
-git clone https://github.com/krolyoxn/nvim.git ~/.config/nvim
+git clone https://github.com/krolyxon/nvim.git ~/.config/nvim
 ```
 
 ### Thanks to [NvChad](https://github.com/nvchad/nvchad)
