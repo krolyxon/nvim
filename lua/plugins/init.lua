@@ -199,6 +199,11 @@ local plugins = {
         end,
     },
     -- misc
+    --
+    {
+        'Exafunction/codeium.vim',
+        event = 'BufEnter'
+    },
 
     {
         'vimwiki/vimwiki',
