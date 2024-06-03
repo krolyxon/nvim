@@ -16,6 +16,7 @@ opt.number = true
 opt.numberwidth = 2
 opt.relativenumber = true
 opt.ruler = false
+opt.colorcolumn = "100"
 
 -- indentline
 opt.expandtab = true
