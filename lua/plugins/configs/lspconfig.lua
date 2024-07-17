@@ -185,6 +185,7 @@ local servers = {
     "taplo",
     "pyright",
     "cssls",
+    "tsserver"
 }
 
 for _, lsp in ipairs(servers) do
