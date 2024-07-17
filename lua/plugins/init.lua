@@ -219,17 +219,25 @@ local plugins = {
         event = 'BufEnter'
     },
 
+    -- {
+    --     'vimwiki/vimwiki',
+    --     event = "VeryLazy",
+    --     init = function()
+    --         vim.g.vimwiki_list = {
+    --             {
+    --                 path = '~/dox/brain/Notes',
+    --                 syntax = 'markdown',
+    --                 ext = '.md',
+    --             }
+    --         }
+    --     end,
+    -- },
+
     {
-        'vimwiki/vimwiki',
-        event = "VeryLazy",
-        init = function()
-            vim.g.vimwiki_list = {
-                {
-                    path = '~/dox/brain/Notes',
-                    syntax = 'markdown',
-                    ext = '.md',
-                }
-            }
+        'MeanderingProgrammer/markdown.nvim',
+        ft = { "markdown" },
+        config = function()
+            require('render-markdown').setup({})
         end,
     },
 
