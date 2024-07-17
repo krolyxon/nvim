@@ -30,12 +30,23 @@ local plugins = {
 
     { 'nvim-lua/plenary.nvim' },
 
+
+    -- {
+    --     "nvim-treesitter/nvim-treesitter",
+    --     init = function()
+    --         require("core.utils").lazy_load "nvim-treesitter"
+    --     end,
+    --     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
+    --     build = ":TSUpdate",
+    --     config = function()
+    --         require "plugins.configs.treesitter"
+    --     end,
+    -- },
+
     {
         "nvim-treesitter/nvim-treesitter",
-        init = function()
-            require("core.utils").lazy_load "nvim-treesitter"
-        end,
-        cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSEnable", "TSDisable", "TSModuleInfo" },
+        event = { "BufReadPost", "BufNewFile" },
+        cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
         build = ":TSUpdate",
         config = function()
             require "plugins.configs.treesitter"
@@ -89,9 +100,11 @@ local plugins = {
 
     {
         "nvim-telescope/telescope.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
         cmd = "Telescope",
         config = function()
             require "plugins.configs.telescope"
+            -- require("telescope").setup()
         end,
         init = function()
             require("core.utils").load_mappings "telescope"
@@ -121,9 +134,11 @@ local plugins = {
 
     {
         "neovim/nvim-lspconfig",
-        init = function()
-            require("core.utils").lazy_load "nvim-lspconfig"
-        end,
+        -- init = function()
+        --     require("core.utils").lazy_load "nvim-lspconfig"
+        -- end,
+
+        event = "User FilePost",
         config = function()
             require "plugins.configs.lspconfig"
         end,
@@ -141,6 +156,12 @@ local plugins = {
             require("core.utils").load_mappings "rust"
         end,
     },
+
+    -- { 'mrcjkb/rustaceanvim',
+    --     version = '^4', -- Recommended
+    --     lazy = false, -- This plugin is already lazy
+    -- },
+
 
     {
         "Saecki/crates.nvim",
@@ -329,6 +350,11 @@ local plugins = {
         config = function(_, opts)
             require("nvim-tree").setup(opts)
         end,
+    },
+
+    {
+        "alec-gibson/nvim-tetris",
+        cmd = { "Tetris" },
     },
 }
 
