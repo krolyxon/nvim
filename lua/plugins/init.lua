@@ -145,23 +145,26 @@ local plugins = {
     },
 
     {
-        "simrat39/rust-tools.nvim",
-        -- after = "nvim-lspconfig",
-        -- event = "BufEnter *.rs",
-        ft = { "rust" },
-        event = { "InsertEnter", "BufReadPre", "BufAdd", "BufNew" },
-        dependencies = "neovim/nvim-lspconfig",
+        'mrcjkb/rustaceanvim',
+        version = '^5', -- Recommended
+        lazy = false,   -- This plugin is already lazy
+        ["rust-analyzer"] = {
+            cargo = {
+                allFeatures = true,
+            },
+        },
         config = function()
-            require("plugins.configs.rust-tools")
             require("core.utils").load_mappings "rust"
-        end,
+            vim.g.rustaceanvim = {
+                tools = {
+                    float_win_config = {
+                        border = 'rounded'
+                    }
+                },
+
+            }
+        end
     },
-
-    -- { 'mrcjkb/rustaceanvim',
-    --     version = '^4', -- Recommended
-    --     lazy = false, -- This plugin is already lazy
-    -- },
-
 
     {
         "Saecki/crates.nvim",

@@ -1,8 +1,7 @@
 local M = {}
 
 M.general = {
-    n = {
-        ["<ESC>"] = { "<cmd> noh <CR>", "no highlight" },
+    n = {        ["<ESC>"] = { "<cmd> noh <CR>", "no highlight" },
 
         -- switch between windows
         -- ["<C-h>"] = { "<C-w>h", "window left" },
@@ -344,10 +343,7 @@ M.rust = {
     plugin = true,
     n = {
         ["<leader>rr"] = { "<cmd> RustRun<CR>", "RustRun" },
-        ["<leader>rd"] = { "<cmd> RustDebuggables <CR>", "RustDebuggables" },
-        ["<leader>ra"] = { "<cmd> RustHoverActions <CR>", "RustHoverActions" },
-        ["<leader>roc"] = { "<cmd> RustOpenCargo <CR>", "RustOpenCargo" },
-        ["<leader>rcg"] = { "<cmd> RustViewCrateGraph <CR>", "RustViewCrateGraph" },
+        ["<leader>roc"] = { "<cmd> RustOpenCargo <CR>", "RustLsp openCargo" },
     },
 }
 
