@@ -152,6 +152,13 @@ lspconfig.asm_lsp.setup {
 
 }
 
+lspconfig.slint_lsp.setup {
+    on_attach = M.on_attach,
+    capabilities = M.capabilities,
+    init_option = { provideFormatter = true },
+    filetypes = { "slt", "slint" },
+}
+
 lspconfig.jdtls.setup {
     on_attach = M.on_attach,
     capabilities = M.capabilities,
@@ -185,7 +192,7 @@ local servers = {
     "taplo",
     "pyright",
     "cssls",
-    "tsserver"
+    "tsserver",
 }
 
 for _, lsp in ipairs(servers) do
