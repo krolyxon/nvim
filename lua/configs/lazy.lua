@@ -1,10 +1,6 @@
 return {
     defaults = { lazy = true },
-
-    -- install = {
-    -- try to load one of these colorschemes when starting an installation during startup
-    -- colorscheme = { "rose-pine" },
-    -- },
+    install = { colorscheme = { "nvchad" } },
 
     ui = {
         icons = {
@@ -24,6 +20,10 @@ return {
                 "getscriptPlugin",
                 "gzip",
                 "logipat",
+                "netrw",
+                "netrwPlugin",
+                "netrwSettings",
+                "netrwFileHandlers",
                 "matchit",
                 "tar",
                 "tarPlugin",
@@ -33,7 +33,7 @@ return {
                 "vimballPlugin",
                 "zip",
                 "zipPlugin",
-                -- "tutor",
+                "tutor",
                 "rplugin",
                 "syntax",
                 "synmenu",

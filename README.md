@@ -1,11 +1,6 @@
-## Installation
-```bash
-# backup your current config
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
+### My nvchad config
 
-# clone my configuration
-git clone https://github.com/krolyxon/nvim.git ~/.config/nvim
-```
-
-### Thanks to [NvChad](https://github.com/nvchad/nvchad)
+#### extra plugins added
+1. rustaceanvim: for rust development.
+2. crates.nvim: for rust dependencies lookup.
+3. nvim-tetris: tetris game.

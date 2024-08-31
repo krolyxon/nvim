@@ -1,21 +1,33 @@
-local KrolyxonGroup = vim.api.nvim_create_augroup('Krolyxon', {})
-
 local autocmd = vim.api.nvim_create_autocmd
 
 -- Highlight on yank
 autocmd("TextYankPost", {
     callback = function()
-        vim.highlight.on_yank({
-            higroup = 'IncSearch',
+        vim.highlight.on_yank {
+            higroup = "IncSearch",
             timeout = 40,
-        })
+        }
     end,
 })
 
+-- Restore Cursor on file open
+autocmd("BufReadPost", {
+    pattern = "*",
+    callback = function()
+        local line = vim.fn.line "'\""
+        if
+            line > 1
+            and line <= vim.fn.line "$"
+            and vim.bo.filetype ~= "commit"
+            and vim.fn.index({ "xxd", "gitrebase" }, vim.bo.filetype) == -1
+        then
+            vim.cmd 'normal! g`"'
+        end
+    end,
+})
 
 -- Remove trailing whitespaces on :w
 autocmd({ "BufWritePre" }, {
-    group = KrolyxonGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
@@ -23,11 +35,11 @@ autocmd({ "BufWritePre" }, {
 -- Don"t auto commenting new lines
 autocmd("BufEnter", {
     pattern = "",
-    command = "set fo-=c fo-=r fo-=o"
+    command = "set fo-=c fo-=r fo-=o",
 })
 
 -- spell check markdown and tex files
-vim.cmd([[
+vim.cmd [[
   augroup spellCheck
     autocmd!
     autocmd Filetype plaintext setlocal spell
@@ -37,18 +49,7 @@ vim.cmd([[
     autocmd BufRead,BufNewFile *.Rmd setlocal spell
     autocmd BufRead,BufNewFile *.tex setlocal spell
   augroup END
-]])
-
-
--- Run C/C++ fil
-vim.api.nvim_buf_set_keymap(0, 'n', '<F5>', ':w<CR>:!gcc -o %:t:r % && ./%:t:r<CR>', { silent = true })
-vim.api.nvim_buf_set_keymap(0, 'n', '<F6>', ':w<CR>:!g++ -o %:t:r % && ./%:t:r<CR>', { silent = true })
-vim.api.nvim_buf_set_keymap(0, 'n', '<F7>',
-    ':w<CR>:lua require("kterm.terminal").send("cp -f " .. vim.fn.expand("%") .. " /tmp; javac -d /tmp " .. vim.fn.expand("%") .. "; java -cp /tmp " .. vim.fn.expand("%:t:r"), "float")<CR>',
-    { silent = true })
--- vim.api.nvim_buf_set_keymap(0, 'n', '<F5>', ":w<CR>:new | term . '!gcc %:p:h && ./a.out'<CR>:startinsert<CR>", {silent = true})
---
-
+]]
 
 local build_commands = {
     c = "!g++ -std=c++17 -o %:p:r.o %",
@@ -58,7 +59,7 @@ local build_commands = {
     -- tex = "pdflatex %",
     tex = "VimtexCompile",
     javascript = "",
-    java = "!jrun %"
+    java = "!jrun %",
 }
 
 local debug_build_commands = {
@@ -105,10 +106,10 @@ vim.api.nvim_create_user_command("Run", function()
 
     for file, command in pairs(run_commands) do
         if filetype == file then
-            vim.cmd("sp") -- Vertical split
+            vim.cmd "sp" -- Vertical split
             -- vim.cmd("vs") -- Horizontal split
             vim.cmd("term " .. command)
-            vim.cmd("resize 20N") -- Comment this if horizontal
+            vim.cmd "resize 20N" -- Comment this if horizontal
             local keys = vim.api.nvim_replace_termcodes("i", true, false, true)
             vim.api.nvim_feedkeys(keys, "n", false)
             break
@@ -117,11 +118,12 @@ vim.api.nvim_create_user_command("Run", function()
 end, {})
 
 vim.api.nvim_create_user_command("Ha", function()
-    vim.cmd([[Build]])
-    vim.cmd([[Run]])
+    vim.cmd [[Build]]
+    vim.cmd [[Run]]
 end, {})
 
-vim.api.nvim_create_user_command("Config", function() vim.cmd([[cd ~/.config/nvim]]) end, {})
-
+vim.api.nvim_create_user_command("Config", function()
+    vim.cmd [[cd ~/.config/nvim]]
+end, {})
 
 vim.cmd [[ autocmd BufRead,BufNewFile *.slint set filetype=slint ]]
