@@ -13,3 +13,7 @@ map("i", "jk", "<ESC>")
 map({ "n", "t" }, "<C-\\>", function()
     require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "terminal toggle floating term" })
+
+-- cycleling through buffers
+map("n", "tk", "<cmd> bnext <CR>", {desc = "Next Buffer"})
+map("n", "tj", "<cmd> bprev <CR>", {desc = "Previous Buffer"})
