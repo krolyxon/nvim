@@ -43,4 +43,8 @@ return {
             require("cmp").setup.buffer { sources = { { name = "crates" } } }
         end,
     },
+
+    {
+        "ThePrimeagen/harpoon",
+    },
 }

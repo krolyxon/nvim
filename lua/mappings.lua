@@ -15,5 +15,29 @@ map({ "n", "t" }, "<C-\\>", function()
 end, { desc = "terminal toggle floating term" })
 
 -- cycleling through buffers
-map("n", "tk", "<cmd> bnext <CR>", {desc = "Next Buffer"})
-map("n", "tj", "<cmd> bprev <CR>", {desc = "Previous Buffer"})
+map("n", "tk", "<cmd> bnext <CR>", { desc = "Next Buffer" })
+map("n", "tj", "<cmd> bprev <CR>", { desc = "Previous Buffer" })
+
+-- Substitute highlighted word
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Harpoon keymaps
+map("n", "<C-h>", function()
+    require("harpoon.ui").nav_file(1)
+end, { desc = "Harpoon File 1" })
+map("n", "<C-j>", function()
+    require("harpoon.ui").nav_file(2)
+end, { desc = "Harpoon File 2" })
+map("n", "<C-k>", function()
+    require("harpoon.ui").nav_file(3)
+end, { desc = "Harpoon File 3" })
+map("n", "<C-l>", function()
+    require("harpoon.ui").nav_file(4)
+end, { desc = "Harpoon File 4" })
+map("n", "<C-e>", function()
+    require("harpoon.ui").toggle_quick_menu()
+end, { desc = "Harpoon Toggle Quick Menu" })
+map("n", "<leader>a", function()
+    require("harpoon.mark").add_file()
+end, { desc = "Harpoon Add File" })
+require("harpoon").setup()
