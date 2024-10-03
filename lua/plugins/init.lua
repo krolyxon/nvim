@@ -24,11 +24,6 @@ return {
 
     -- Misc
     {
-        "Exafunction/codeium.vim",
-        event = "BufEnter",
-    },
-
-    {
         "alec-gibson/nvim-tetris",
         cmd = { "Tetris" },
     },
@@ -46,5 +41,34 @@ return {
 
     {
         "ThePrimeagen/harpoon",
+    },
+
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = {},
+        ft = "markdown",
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    },
+
+    {
+        "Zeioth/compiler.nvim",
+        cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+        dependencies = { "stevearc/overseer.nvim", "nvim-telescope/telescope.nvim" },
+        opts = {},
+    },
+
+    -- Task runner for compiler.nvim
+    {
+        "stevearc/overseer.nvim",
+        commit = "6271cab7ccc4ca840faa93f54440ffae3a3918bd",
+        cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+        opts = {
+            task_list = {
+                direction = "bottom",
+                min_height = 25,
+                max_height = 25,
+                default_detail = 1,
+            },
+        },
     },
 }

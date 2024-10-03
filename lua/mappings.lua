@@ -41,3 +41,8 @@ map("n", "<leader>a", function()
     require("harpoon.mark").add_file()
 end, { desc = "Harpoon Add File" })
 require("harpoon").setup()
+
+-- Compiler.nvim
+map("n", "<F4>", "<cmd>CompilerOpen<cr>")
+map("n", "<S-F4>", "<cmd>CompilerStop<cr>" .. "<cmd>CompilerRedo<cr>")
+map("n", "<F5>", "<cmd>CompilerToggleResults<cr>")
