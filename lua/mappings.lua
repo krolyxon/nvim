@@ -46,3 +46,6 @@ require("harpoon").setup()
 map("n", "<F4>", "<cmd>CompilerOpen<cr>")
 map("n", "<S-F4>", "<cmd>CompilerStop<cr>" .. "<cmd>CompilerRedo<cr>")
 map("n", "<F5>", "<cmd>CompilerToggleResults<cr>")
+
+-- UndotreeToggle
+map("n", "<leader>u", "<cmd>UndotreeToggle<cr>")

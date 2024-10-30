@@ -12,15 +12,31 @@ return {
         end,
     },
 
-    -- {
-    -- 	"nvim-treesitter/nvim-treesitter",
-    -- 	opts = {
-    -- 		ensure_installed = {
-    -- 			"vim", "lua", "vimdoc",
-    --      "html", "css"
-    -- 		},
-    -- 	},
-    -- },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        opts = {
+            ensure_installed = {
+                "vim",
+                "lua",
+                "vimdoc",
+                "rust",
+                "python",
+                "c",
+                "regex",
+                "html",
+                "css",
+                "javascript",
+                "markdown",
+                "markdown_inline",
+                "tsx"
+            },
+        },
+    },
+
+    {
+        "mbbill/undotree",
+        cmd = "UndotreeToggle",
+    },
 
     -- Misc
     {
@@ -44,10 +60,12 @@ return {
     },
 
     {
-        "MeanderingProgrammer/render-markdown.nvim",
-        opts = {},
-        ft = "markdown",
-        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        "OXY2DEV/markview.nvim",
+        lazy = false,
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons",
+        },
     },
 
     {
