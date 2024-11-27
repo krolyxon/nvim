@@ -28,7 +28,7 @@ return {
                 "javascript",
                 "markdown",
                 "markdown_inline",
-                "tsx"
+                "tsx",
             },
         },
     },
