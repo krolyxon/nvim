@@ -44,28 +44,40 @@ return {
         cmd = { "Tetris" },
     },
 
-    -- Crates version completion for rust
-    {
-        "Saecki/crates.nvim",
-        event = { "BufRead Cargo.toml" },
-        config = function()
-            require("crates").setup()
-            -- Add crates.nvim to the cmp sources as soon as we load the plugin
-            require("cmp").setup.buffer { sources = { { name = "crates" } } }
-        end,
-    },
-
     {
         "ThePrimeagen/harpoon",
     },
 
     {
-        "OXY2DEV/markview.nvim",
-        lazy = false,
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-            "nvim-tree/nvim-web-devicons",
-        },
+        "vimwiki/vimwiki",
+        event = "BufEnter *.md",
+        ft = "markdown",
+        keys = { "<leader>ww", "<leader>wt" },
+        init = function()
+            vim.g.vimwiki_list = {
+                {
+                    -- Here will be the path for your wiki
+                    path = "~/dox/brain/",
+                    -- The syntax for the wiki
+                    syntax = "markdown",
+                    ext = "md",
+                },
+            }
+            vim.g.vimwiki_ext2syntax = {
+                [".md"] = "markdown", -- Correct initialization of the dictionary
+            }
+            vim.g.vimwiki_global_ext = 0
+        end,
+    },
+
+
+    {
+        'kiddos/gemini.nvim',
+        -- lazy = false,
+        cmd = { "GeminiChat", "GeminiCodeReview", "GeminiUnitTest", "GeminiCodeExplain", "GeminiFunctionHint"},
+        config = function()
+            require('gemini').setup()
+        end
     },
 
     {
