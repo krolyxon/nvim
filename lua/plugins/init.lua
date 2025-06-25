@@ -49,27 +49,17 @@ return {
     },
 
     {
-        "vimwiki/vimwiki",
-        event = "BufEnter *.md",
-        ft = "markdown",
-        keys = { "<leader>ww", "<leader>wt" },
-        init = function()
-            vim.g.vimwiki_list = {
-                {
-                    -- Here will be the path for your wiki
-                    path = "~/dox/brain/",
-                    -- The syntax for the wiki
-                    syntax = "markdown",
-                    ext = "md",
-                },
-            }
-            vim.g.vimwiki_ext2syntax = {
-                [".md"] = "markdown", -- Correct initialization of the dictionary
-            }
-            vim.g.vimwiki_global_ext = 0
-        end,
+        'MeanderingProgrammer/render-markdown.nvim',
+        lazy = false,
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {
+            render_modes = {'n', 'c', 't'}
+        },
     },
-
 
     {
         'kiddos/gemini.nvim',

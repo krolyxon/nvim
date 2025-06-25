@@ -2,7 +2,7 @@
 local M = {}
 
 M.base46 = {
-    theme = "tokyodark",
+    theme = "gruvbox",
     theme_toggle = { "tokyodark", "tokyonight" },
 }
 
