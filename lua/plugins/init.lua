@@ -62,15 +62,6 @@ return {
     },
 
     {
-        'kiddos/gemini.nvim',
-        -- lazy = false,
-        cmd = { "GeminiChat", "GeminiCodeReview", "GeminiUnitTest", "GeminiCodeExplain", "GeminiFunctionHint"},
-        config = function()
-            require('gemini').setup()
-        end
-    },
-
-    {
         "Zeioth/compiler.nvim",
         cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
         dependencies = { "stevearc/overseer.nvim", "nvim-telescope/telescope.nvim" },
