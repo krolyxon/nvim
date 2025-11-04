@@ -1,45 +1,22 @@
+-- Autocmds are automatically loaded on the VeryLazy event
+-- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
+--
+-- Add any additional autocmds here
+-- with `vim.api.nvim_create_autocmd`
+--
+-- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
+-- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
 local autocmd = vim.api.nvim_create_autocmd
 
--- Highlight on yank
-autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank {
-            higroup = "IncSearch",
-            timeout = 40,
-        }
-    end,
-})
-
--- Restore Cursor on file open
-autocmd("BufReadPost", {
-    pattern = "*",
-    callback = function()
-        local line = vim.fn.line "'\""
-        if
-            line > 1
-            and line <= vim.fn.line "$"
-            and vim.bo.filetype ~= "commit"
-            and vim.fn.index({ "xxd", "gitrebase" }, vim.bo.filetype) == -1
-        then
-            vim.cmd 'normal! g`"'
-        end
-    end,
-})
-
--- Remove trailing whitespaces on :w
-autocmd({ "BufWritePre" }, {
+-- remove trailing whitespaces on :w
+autocmd({ "bufwritepre" }, {
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
 
--- Don"t auto commenting new lines
-autocmd("BufEnter", {
-    pattern = "",
-    command = "set fo-=c fo-=r fo-=o",
-})
-
 -- spell check markdown and tex files
-vim.cmd [[
+vim.cmd([[
   augroup spellCheck
     autocmd!
     autocmd Filetype plaintext setlocal spell
@@ -49,7 +26,7 @@ vim.cmd [[
     autocmd BufRead,BufNewFile *.Rmd setlocal spell
     autocmd BufRead,BufNewFile *.tex setlocal spell
   augroup END
-]]
+]])
 
 local build_commands = {
     c = "!g++ -std=c++17 -o %:p:r.o %",
@@ -106,10 +83,10 @@ vim.api.nvim_create_user_command("Run", function()
 
     for file, command in pairs(run_commands) do
         if filetype == file then
-            vim.cmd "sp" -- Vertical split
+            vim.cmd("sp") -- Vertical split
             -- vim.cmd("vs") -- Horizontal split
             vim.cmd("term " .. command)
-            vim.cmd "resize 20N" -- Comment this if horizontal
+            vim.cmd("resize 20N") -- Comment this if horizontal
             local keys = vim.api.nvim_replace_termcodes("i", true, false, true)
             vim.api.nvim_feedkeys(keys, "n", false)
             break
@@ -118,12 +95,10 @@ vim.api.nvim_create_user_command("Run", function()
 end, {})
 
 vim.api.nvim_create_user_command("Ha", function()
-    vim.cmd [[Build]]
-    vim.cmd [[Run]]
+    vim.cmd([[Build]])
+    vim.cmd([[Run]])
 end, {})
 
 vim.api.nvim_create_user_command("Config", function()
-    vim.cmd [[cd ~/.config/nvim]]
+    vim.cmd([[cd ~/.config/nvim]])
 end, {})
-
-vim.cmd [[ autocmd BufRead,BufNewFile *.slint set filetype=slint ]]

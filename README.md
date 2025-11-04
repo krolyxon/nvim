@@ -1,6 +1,4 @@
-### My nvchad config
+# 💤 LazyVim
 
-#### extra plugins added
-1. rustaceanvim: for rust development.
-2. crates.nvim: for rust dependencies lookup.
-3. nvim-tetris: tetris game.
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
