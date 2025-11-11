@@ -12,3 +12,4 @@ opt.shiftwidth = 4
 opt.smartindent = true
 opt.shiftround = false
 opt.tabstop = 4
+opt.clipboard = "unnamedplus"
